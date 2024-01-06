@@ -828,3 +828,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-31 10:28:30 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2024-01-01 14:18:57 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2024-01-05 10:25:04 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2024-01-06 17:25:26 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
