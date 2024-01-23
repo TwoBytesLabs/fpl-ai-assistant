@@ -834,3 +834,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-01-17 11:16:04 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2024-01-20 20:50:58 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2024-01-23 09:32:15 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2024-01-23 17:40:38 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
