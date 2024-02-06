@@ -840,3 +840,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-01-30 22:59:13 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2024-02-01 13:08:18 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2024-02-05 13:17:53 +0530` - docs: update FPL player projection pipeline specification
+* `2024-02-06 15:58:34 +0530` - feat(ui): refine captaincy pick confidence indicator component
