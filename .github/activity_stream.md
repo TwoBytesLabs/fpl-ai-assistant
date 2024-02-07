@@ -842,3 +842,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-02-05 13:17:53 +0530` - docs: update FPL player projection pipeline specification
 * `2024-02-06 15:58:34 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2024-02-06 22:14:46 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2024-02-07 13:21:39 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
