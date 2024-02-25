@@ -845,3 +845,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-02-07 13:21:39 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2024-02-07 16:29:23 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2024-02-15 09:20:42 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2024-02-25 10:11:17 +0530` - refactor(config): centralize fixture difficulty heuristic weights
