@@ -865,3 +865,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-04-21 10:20:37 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2024-04-22 12:53:21 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2024-04-30 16:29:50 +0530` - feat(engine): integrate opponent defensive vulnerability index
+* `2024-05-02 15:43:23 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
