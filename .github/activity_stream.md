@@ -867,3 +867,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-04-30 16:29:50 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2024-05-02 15:43:23 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2024-05-02 17:10:25 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2024-05-08 09:57:23 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
