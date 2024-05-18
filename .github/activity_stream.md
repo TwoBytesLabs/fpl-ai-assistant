@@ -870,3 +870,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-05-08 09:57:23 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2024-05-08 19:57:35 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2024-05-17 14:57:47 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2024-05-18 19:54:24 +0530` - chore(deps): update data science, pandas, and scipy dependencies
