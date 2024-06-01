@@ -873,3 +873,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-05-18 19:54:24 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2024-05-26 11:44:31 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2024-06-01 11:15:37 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2024-06-01 11:46:03 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
