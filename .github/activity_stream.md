@@ -878,3 +878,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-06-11 15:56:34 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2024-06-13 11:12:33 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2024-06-22 20:46:54 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2024-07-10 12:18:17 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
