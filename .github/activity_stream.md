@@ -880,3 +880,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-06-22 20:46:54 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2024-07-10 12:18:17 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2024-07-11 22:06:38 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2024-07-18 13:55:41 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
