@@ -884,3 +884,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-07-21 20:21:14 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2024-07-23 15:59:11 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2024-07-28 12:56:03 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2024-07-31 15:44:34 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
