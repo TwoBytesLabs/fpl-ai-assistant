@@ -889,3 +889,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-08-05 16:29:19 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2024-08-16 15:35:04 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2024-08-16 21:53:16 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2024-08-17 12:29:54 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
