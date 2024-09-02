@@ -893,3 +893,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-08-22 12:42:40 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2024-08-22 19:23:01 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2024-08-27 09:50:37 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2024-09-02 20:05:08 +0530` - feat(ui): refine captaincy pick confidence indicator component
