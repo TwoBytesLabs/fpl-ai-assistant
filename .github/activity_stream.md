@@ -901,3 +901,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-10-10 19:48:54 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2024-10-13 13:19:06 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2024-10-13 17:05:41 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2024-10-15 22:09:21 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
