@@ -902,3 +902,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-10-13 13:19:06 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2024-10-13 17:05:41 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2024-10-15 22:09:21 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2024-10-16 13:48:07 +0530` - feat(ui): refine captaincy pick confidence indicator component
