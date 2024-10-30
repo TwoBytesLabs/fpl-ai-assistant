@@ -904,3 +904,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-10-15 22:09:21 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2024-10-16 13:48:07 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2024-10-16 20:48:27 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2024-10-30 15:52:52 +0530` - refactor(config): centralize fixture difficulty heuristic weights
