@@ -908,3 +908,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-11-08 17:48:20 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2024-11-13 20:15:48 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2024-11-15 09:13:20 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2024-11-23 17:10:32 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
