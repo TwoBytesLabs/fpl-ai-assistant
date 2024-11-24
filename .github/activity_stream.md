@@ -909,3 +909,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-11-13 20:15:48 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2024-11-15 09:13:20 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2024-11-23 17:10:32 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2024-11-24 15:55:31 +0530` - feat(engine): integrate opponent defensive vulnerability index
