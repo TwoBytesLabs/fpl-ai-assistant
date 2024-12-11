@@ -913,3 +913,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-11-27 17:15:05 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2024-11-30 19:54:49 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2024-12-03 18:06:29 +0530` - docs: update FPL player projection pipeline specification
+* `2024-12-11 13:33:02 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
