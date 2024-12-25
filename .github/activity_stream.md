@@ -917,3 +917,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-12-16 09:16:02 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2024-12-18 17:04:02 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2024-12-18 17:36:37 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2024-12-25 22:18:41 +0530` - feat(ui): refine captaincy pick confidence indicator component
