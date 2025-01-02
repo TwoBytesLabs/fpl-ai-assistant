@@ -920,3 +920,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2024-12-25 22:18:41 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2024-12-27 21:48:34 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-01-02 10:21:23 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2025-01-02 12:12:18 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
