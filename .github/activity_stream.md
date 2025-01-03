@@ -922,3 +922,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-02 10:21:23 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-01-02 12:12:18 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-01-02 16:03:04 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2025-01-03 12:29:19 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
