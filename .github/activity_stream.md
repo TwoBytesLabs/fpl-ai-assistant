@@ -924,3 +924,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-02 16:03:04 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-01-03 12:29:19 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-01-04 18:14:18 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2025-01-04 20:58:55 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
