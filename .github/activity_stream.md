@@ -933,3 +933,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-11 16:46:17 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-01-11 20:46:05 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2025-01-11 22:18:15 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2025-01-12 20:18:24 +0530` - refactor(config): centralize fixture difficulty heuristic weights
