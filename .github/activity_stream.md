@@ -936,3 +936,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-12 20:18:24 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-01-12 22:02:10 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-01-13 09:37:27 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2025-01-13 17:13:10 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
