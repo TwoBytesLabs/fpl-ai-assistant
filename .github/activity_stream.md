@@ -935,3 +935,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-11 22:18:15 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-01-12 20:18:24 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-01-12 22:02:10 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2025-01-13 09:37:27 +0530` - feat(ui): refine captaincy pick confidence indicator component
