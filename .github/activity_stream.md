@@ -941,3 +941,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-14 13:32:02 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-01-15 12:23:15 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2025-01-16 21:30:16 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2025-01-17 13:52:55 +0530` - docs: update FPL player projection pipeline specification
