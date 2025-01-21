@@ -944,3 +944,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-17 13:52:55 +0530` - docs: update FPL player projection pipeline specification
 * `2025-01-17 18:37:32 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-01-20 13:42:27 +0530` - docs: update FPL player projection pipeline specification
+* `2025-01-21 09:37:53 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
