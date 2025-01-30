@@ -951,3 +951,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-24 17:23:44 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-01-29 11:53:01 +0530` - docs: update FPL player projection pipeline specification
 * `2025-01-30 12:00:02 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2025-01-30 18:37:51 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
