@@ -950,3 +950,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-23 10:36:36 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2025-01-24 17:23:44 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-01-29 11:53:01 +0530` - docs: update FPL player projection pipeline specification
+* `2025-01-30 12:00:02 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
