@@ -952,3 +952,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-01-29 11:53:01 +0530` - docs: update FPL player projection pipeline specification
 * `2025-01-30 12:00:02 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-01-30 18:37:51 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2025-01-31 12:44:59 +0530` - feat(ui): refine captaincy pick confidence indicator component
