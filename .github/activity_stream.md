@@ -961,3 +961,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-02-05 18:14:23 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-02-05 20:12:56 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-02-06 16:29:39 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2025-02-06 19:43:27 +0530` - refactor(config): centralize fixture difficulty heuristic weights
