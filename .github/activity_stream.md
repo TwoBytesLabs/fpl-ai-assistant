@@ -965,3 +965,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-02-06 22:36:39 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-02-08 15:16:49 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-02-08 20:03:34 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2025-02-09 09:05:39 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
