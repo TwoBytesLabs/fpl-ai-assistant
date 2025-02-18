@@ -978,3 +978,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-02-16 10:05:38 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-02-16 18:06:03 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-02-18 17:07:55 +0530` - feat(engine): integrate opponent defensive vulnerability index
+* `2025-02-18 21:01:32 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
