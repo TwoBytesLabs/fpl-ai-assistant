@@ -980,3 +980,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-02-18 17:07:55 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-02-18 21:01:32 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-02-19 17:57:11 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2025-02-19 21:53:03 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
