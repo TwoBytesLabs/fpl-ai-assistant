@@ -984,3 +984,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-02-21 20:14:25 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2025-02-21 21:03:43 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-02-23 17:48:58 +0530` - docs: update FPL player projection pipeline specification
+* `2025-02-23 18:32:41 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
