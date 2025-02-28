@@ -988,3 +988,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-02-24 12:42:12 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-02-24 14:50:09 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-02-28 16:31:57 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2025-02-28 20:04:40 +0530` - refactor(config): centralize fixture difficulty heuristic weights
