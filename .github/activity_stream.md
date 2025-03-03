@@ -993,3 +993,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-01 20:49:00 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-03-03 11:08:20 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-03-03 11:28:25 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2025-03-03 20:44:29 +0530` - feat(engine): integrate opponent defensive vulnerability index
