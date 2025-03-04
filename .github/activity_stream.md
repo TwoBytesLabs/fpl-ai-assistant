@@ -996,3 +996,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-03 20:44:29 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-03-04 11:29:44 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-03-04 12:07:50 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2025-03-04 14:05:02 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
