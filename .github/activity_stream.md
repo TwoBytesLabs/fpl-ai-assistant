@@ -999,3 +999,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-04 14:05:02 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-03-04 18:58:27 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-03-05 09:22:53 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2025-03-06 20:31:38 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
