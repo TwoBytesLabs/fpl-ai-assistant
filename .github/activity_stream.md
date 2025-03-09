@@ -1004,3 +1004,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-07 16:27:05 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-03-09 09:25:28 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-03-09 10:46:23 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2025-03-09 18:26:36 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
