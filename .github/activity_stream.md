@@ -1003,3 +1003,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-07 12:50:22 +0530` - docs: update FPL player projection pipeline specification
 * `2025-03-07 16:27:05 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-03-09 09:25:28 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2025-03-09 10:46:23 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
