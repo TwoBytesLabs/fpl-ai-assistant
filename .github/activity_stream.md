@@ -1006,3 +1006,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-09 10:46:23 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-03-09 18:26:36 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-03-10 15:49:30 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2025-03-10 16:10:22 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
