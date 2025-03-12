@@ -1009,3 +1009,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-10 16:10:22 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-03-11 13:32:18 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-03-11 16:24:13 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2025-03-12 18:10:26 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
