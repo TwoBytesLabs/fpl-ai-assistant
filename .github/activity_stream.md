@@ -1025,3 +1025,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-21 12:59:08 +0530` - docs: update FPL player projection pipeline specification
 * `2025-03-21 16:01:15 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-03-22 20:41:33 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2025-03-23 20:50:24 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
