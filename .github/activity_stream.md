@@ -1030,3 +1030,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-26 14:43:04 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2025-03-26 19:48:06 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-03-27 09:55:29 +0530` - docs: update FPL player projection pipeline specification
+* `2025-03-27 20:23:26 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
