@@ -1031,3 +1031,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-26 19:48:06 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-03-27 09:55:29 +0530` - docs: update FPL player projection pipeline specification
 * `2025-03-27 20:23:26 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2025-03-28 10:40:16 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
