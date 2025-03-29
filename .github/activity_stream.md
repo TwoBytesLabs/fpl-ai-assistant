@@ -1033,3 +1033,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-27 20:23:26 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2025-03-28 10:40:16 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-03-29 10:26:01 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2025-03-29 20:58:45 +0530` - chore(deps): update data science, pandas, and scipy dependencies
