@@ -1036,3 +1036,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-29 20:58:45 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2025-03-31 16:41:34 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-03-31 19:14:51 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2025-04-01 17:52:47 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
