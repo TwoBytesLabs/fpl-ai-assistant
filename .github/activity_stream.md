@@ -1037,3 +1037,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-03-31 16:41:34 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-03-31 19:14:51 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-04-01 17:52:47 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2025-04-02 15:27:56 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
