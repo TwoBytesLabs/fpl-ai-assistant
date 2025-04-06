@@ -1041,3 +1041,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-04-02 16:06:48 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-04-04 21:59:06 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2025-04-06 11:18:02 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2025-04-06 20:51:12 +0530` - refactor(config): centralize fixture difficulty heuristic weights
