@@ -1051,3 +1051,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-04-13 14:58:06 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-04-13 22:41:27 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2025-04-16 16:05:34 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2025-04-16 22:22:54 +0530` - feat(ui): refine captaincy pick confidence indicator component
