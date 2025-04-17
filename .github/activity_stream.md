@@ -1053,3 +1053,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-04-16 16:05:34 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2025-04-16 22:22:54 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-04-17 14:37:43 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2025-04-17 18:35:30 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
