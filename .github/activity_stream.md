@@ -1061,3 +1061,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-04-22 17:42:53 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-04-22 18:11:36 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2025-04-22 18:13:24 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2025-04-24 11:46:05 +0530` - fix(data): sanitize historical price fluctuation and transfer records
