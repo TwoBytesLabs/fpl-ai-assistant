@@ -1067,3 +1067,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-04-28 14:24:19 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-04-28 21:21:55 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-05-01 09:29:26 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2025-05-01 21:44:54 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
