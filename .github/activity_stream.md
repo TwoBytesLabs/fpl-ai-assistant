@@ -1073,3 +1073,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-05-03 13:43:13 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-05-04 12:59:04 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-05-05 15:53:21 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2025-05-05 21:53:12 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
