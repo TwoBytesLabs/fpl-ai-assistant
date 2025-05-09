@@ -1078,3 +1078,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-05-07 22:46:27 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-05-09 09:32:50 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2025-05-09 14:29:32 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2025-05-09 22:41:43 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
