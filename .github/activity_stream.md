@@ -1076,3 +1076,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-05-05 21:53:12 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-05-07 11:23:34 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-05-07 22:46:27 +0530` - feat(engine): integrate opponent defensive vulnerability index
+* `2025-05-09 09:32:50 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
