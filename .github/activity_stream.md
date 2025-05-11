@@ -1081,3 +1081,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-05-09 22:41:43 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-05-11 16:37:46 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-05-11 18:47:59 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2025-05-11 21:21:36 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
