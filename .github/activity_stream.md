@@ -1079,3 +1079,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-05-09 09:32:50 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2025-05-09 14:29:32 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-05-09 22:41:43 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2025-05-11 16:37:46 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
