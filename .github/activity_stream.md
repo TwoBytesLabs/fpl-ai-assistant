@@ -1086,3 +1086,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-05-13 11:10:41 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-05-15 09:22:33 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2025-05-15 19:42:59 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2025-05-16 21:44:07 +0530` - feat(engine): integrate opponent defensive vulnerability index
