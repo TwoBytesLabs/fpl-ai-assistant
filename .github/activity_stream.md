@@ -1088,3 +1088,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-05-15 19:42:59 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-05-16 21:44:07 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-05-18 16:15:02 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2025-05-20 14:58:41 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
