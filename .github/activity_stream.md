@@ -1097,3 +1097,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-05-24 13:14:49 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-05-24 13:23:36 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-05-25 09:36:45 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2025-05-25 12:28:28 +0530` - feat(engine): integrate opponent defensive vulnerability index
