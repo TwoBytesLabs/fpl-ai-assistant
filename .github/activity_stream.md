@@ -1099,3 +1099,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-05-25 09:36:45 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-05-25 12:28:28 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-05-25 21:28:34 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2025-05-26 15:03:19 +0530` - chore(deps): update data science, pandas, and scipy dependencies
