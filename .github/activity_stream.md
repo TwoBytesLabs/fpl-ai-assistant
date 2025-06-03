@@ -1110,3 +1110,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-01 15:55:01 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-06-01 17:25:49 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-06-01 20:51:21 +0530` - docs: update FPL player projection pipeline specification
+* `2025-06-03 19:30:36 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
