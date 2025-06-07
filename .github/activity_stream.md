@@ -1115,3 +1115,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-04 14:39:46 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2025-06-05 17:40:54 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-06-06 12:03:23 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2025-06-07 09:14:57 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
