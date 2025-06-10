@@ -1119,3 +1119,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-07 17:52:27 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-06-07 18:20:15 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-06-07 19:55:27 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2025-06-10 12:49:56 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
