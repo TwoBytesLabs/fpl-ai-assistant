@@ -1123,3 +1123,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-10 18:55:18 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-06-12 14:18:11 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-06-12 15:37:48 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2025-06-12 18:04:32 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
