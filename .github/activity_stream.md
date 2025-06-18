@@ -1125,3 +1125,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-12 15:37:48 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-06-12 18:04:32 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-06-15 14:38:15 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2025-06-18 17:53:01 +0530` - chore(deps): update data science, pandas, and scipy dependencies
