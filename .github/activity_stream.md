@@ -1133,3 +1133,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-20 10:42:16 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-06-20 18:11:30 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-06-22 19:02:34 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2025-06-22 21:45:18 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
