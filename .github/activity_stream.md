@@ -1135,3 +1135,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-22 19:02:34 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2025-06-22 21:45:18 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-06-23 17:48:26 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2025-06-25 10:34:51 +0530` - fix(data): sanitize historical price fluctuation and transfer records
