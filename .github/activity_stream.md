@@ -1138,3 +1138,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-25 10:34:51 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-06-26 19:41:32 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2025-06-27 19:05:19 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2025-06-27 21:47:02 +0530` - refactor(config): centralize fixture difficulty heuristic weights
