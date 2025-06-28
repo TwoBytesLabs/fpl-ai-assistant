@@ -1141,3 +1141,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-27 21:47:02 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-06-28 09:30:28 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-06-28 12:02:45 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2025-06-28 13:25:24 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
