@@ -1145,3 +1145,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-06-30 10:19:22 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-06-30 13:38:24 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-06-30 22:25:06 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2025-07-01 10:45:33 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
