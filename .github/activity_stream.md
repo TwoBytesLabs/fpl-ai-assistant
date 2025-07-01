@@ -1148,3 +1148,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-07-01 10:45:33 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-07-01 12:03:39 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-07-01 12:24:47 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2025-07-01 16:32:19 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
