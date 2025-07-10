@@ -1158,3 +1158,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-07-07 13:46:19 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-07-07 19:52:19 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2025-07-09 19:23:27 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2025-07-10 17:52:25 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
