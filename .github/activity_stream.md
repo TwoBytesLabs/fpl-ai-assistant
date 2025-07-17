@@ -1164,3 +1164,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-07-14 10:43:26 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-07-14 14:27:25 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-07-14 21:49:21 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2025-07-17 09:22:05 +0530` - chore(deps): update data science, pandas, and scipy dependencies
