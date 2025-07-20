@@ -1168,3 +1168,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-07-17 12:56:09 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2025-07-17 15:27:32 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2025-07-17 16:05:54 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2025-07-20 09:00:45 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
