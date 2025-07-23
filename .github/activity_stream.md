@@ -1173,3 +1173,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-07-22 13:04:59 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2025-07-22 16:56:38 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2025-07-22 22:31:38 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2025-07-23 19:33:35 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
