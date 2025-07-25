@@ -1175,3 +1175,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-07-22 22:31:38 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-07-23 19:33:35 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-07-25 16:15:04 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2025-07-25 22:08:15 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
