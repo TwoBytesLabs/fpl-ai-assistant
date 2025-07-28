@@ -1177,3 +1177,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-07-25 16:15:04 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-07-25 22:08:15 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-07-26 13:08:13 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2025-07-28 09:02:41 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
