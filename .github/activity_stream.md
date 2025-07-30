@@ -1181,3 +1181,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-07-28 17:51:41 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-07-29 11:26:33 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-07-29 22:32:43 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2025-07-30 14:14:24 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
