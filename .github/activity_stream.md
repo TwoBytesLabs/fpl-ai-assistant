@@ -1188,3 +1188,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-03 10:02:47 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-08-03 12:06:37 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-08-04 16:20:11 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2025-08-05 12:35:40 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
