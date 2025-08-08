@@ -1192,3 +1192,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-05 14:23:03 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-08-05 16:52:41 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2025-08-05 21:04:58 +0530` - feat(engine): integrate opponent defensive vulnerability index
+* `2025-08-08 12:20:18 +0530` - docs: update FPL player projection pipeline specification
