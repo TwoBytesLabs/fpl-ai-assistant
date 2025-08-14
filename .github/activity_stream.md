@@ -1198,3 +1198,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-10 12:18:07 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-08-11 09:02:03 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-08-11 09:56:46 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2025-08-14 18:28:32 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
