@@ -1200,3 +1200,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-11 09:56:46 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-08-14 18:28:32 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-08-15 20:33:03 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2025-08-15 21:47:21 +0530` - chore(deps): update data science, pandas, and scipy dependencies
