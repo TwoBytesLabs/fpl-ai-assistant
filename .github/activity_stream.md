@@ -1204,3 +1204,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-17 20:19:03 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-08-18 13:35:45 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-08-20 10:33:16 +0530` - docs: update FPL player projection pipeline specification
+* `2025-08-20 17:44:02 +0530` - fix(data): sanitize historical price fluctuation and transfer records
