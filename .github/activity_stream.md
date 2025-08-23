@@ -1208,3 +1208,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-20 21:50:19 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-08-22 16:42:12 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-08-22 19:33:55 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2025-08-23 18:36:35 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
