@@ -1211,3 +1211,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-23 18:36:35 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-08-23 19:24:57 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-08-23 21:03:57 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2025-08-27 13:53:01 +0530` - fix(data): sanitize historical price fluctuation and transfer records
