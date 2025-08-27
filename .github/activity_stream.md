@@ -1212,3 +1212,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-23 19:24:57 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-08-23 21:03:57 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-08-27 13:53:01 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2025-08-27 14:19:02 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
