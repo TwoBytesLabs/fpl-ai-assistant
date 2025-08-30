@@ -1216,3 +1216,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-28 10:15:36 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2025-08-29 15:26:58 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-08-29 21:07:00 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2025-08-30 12:56:11 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
