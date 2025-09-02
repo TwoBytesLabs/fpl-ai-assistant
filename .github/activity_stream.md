@@ -1219,3 +1219,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-08-30 12:56:11 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-09-01 13:01:48 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2025-09-01 21:03:36 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2025-09-02 10:18:16 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
