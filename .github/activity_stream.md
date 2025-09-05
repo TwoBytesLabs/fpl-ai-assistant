@@ -1226,3 +1226,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-04 10:47:19 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-09-04 19:38:14 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2025-09-05 16:05:28 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2025-09-05 19:22:59 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
