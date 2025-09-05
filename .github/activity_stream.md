@@ -1225,3 +1225,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-03 12:58:13 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2025-09-04 10:47:19 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-09-04 19:38:14 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2025-09-05 16:05:28 +0530` - fix(data): sanitize historical price fluctuation and transfer records
