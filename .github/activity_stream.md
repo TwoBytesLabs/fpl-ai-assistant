@@ -1229,3 +1229,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-05 19:22:59 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-09-07 20:00:44 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-09-08 12:51:25 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2025-09-08 13:42:43 +0530` - refactor(config): centralize fixture difficulty heuristic weights
