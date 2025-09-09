@@ -1230,3 +1230,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-07 20:00:44 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-09-08 12:51:25 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2025-09-08 13:42:43 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2025-09-09 15:34:40 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
