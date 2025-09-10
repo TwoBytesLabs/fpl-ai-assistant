@@ -1233,3 +1233,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-09 15:34:40 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-09-09 18:38:16 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-09-10 14:42:50 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2025-09-10 19:42:48 +0530` - refactor(config): centralize fixture difficulty heuristic weights
