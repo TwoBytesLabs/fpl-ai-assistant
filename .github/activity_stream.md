@@ -1234,3 +1234,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-09 18:38:16 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-09-10 14:42:50 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-09-10 19:42:48 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2025-09-11 17:19:44 +0530` - chore(deps): update data science, pandas, and scipy dependencies
