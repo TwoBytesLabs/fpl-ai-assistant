@@ -1243,3 +1243,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-22 13:14:39 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-09-22 15:03:55 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2025-09-23 13:32:59 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2025-09-26 09:24:53 +0530` - chore(deps): update data science, pandas, and scipy dependencies
