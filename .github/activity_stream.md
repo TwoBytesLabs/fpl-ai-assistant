@@ -1246,3 +1246,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-26 09:24:53 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2025-09-26 13:08:02 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-09-26 17:42:29 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2025-09-26 22:34:54 +0530` - feat(engine): integrate opponent defensive vulnerability index
