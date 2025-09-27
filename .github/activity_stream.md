@@ -1248,3 +1248,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-26 17:42:29 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-09-26 22:34:54 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-09-27 10:47:18 +0530` - docs: update FPL player projection pipeline specification
+* `2025-09-27 21:36:58 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
