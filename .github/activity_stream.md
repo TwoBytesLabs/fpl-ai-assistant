@@ -1249,3 +1249,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-26 22:34:54 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-09-27 10:47:18 +0530` - docs: update FPL player projection pipeline specification
 * `2025-09-27 21:36:58 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2025-09-28 11:17:02 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
