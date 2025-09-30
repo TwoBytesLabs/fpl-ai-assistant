@@ -1255,3 +1255,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-29 09:04:59 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-09-29 15:44:13 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2025-09-30 17:36:48 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2025-09-30 18:06:08 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
