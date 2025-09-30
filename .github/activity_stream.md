@@ -1254,3 +1254,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-28 14:48:48 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-09-29 09:04:59 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-09-29 15:44:13 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2025-09-30 17:36:48 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
