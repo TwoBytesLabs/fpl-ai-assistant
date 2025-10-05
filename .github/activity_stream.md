@@ -1260,3 +1260,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-09-30 21:44:06 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-10-04 18:26:49 +0530` - docs: update FPL player projection pipeline specification
 * `2025-10-04 21:09:00 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2025-10-05 11:05:42 +0530` - feat(engine): integrate opponent defensive vulnerability index
