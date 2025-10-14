@@ -1267,3 +1267,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-10-08 13:07:53 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-10-09 16:06:29 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2025-10-09 21:01:39 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2025-10-14 18:23:05 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
