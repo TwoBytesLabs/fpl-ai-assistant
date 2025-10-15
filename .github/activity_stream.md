@@ -1271,3 +1271,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-10-14 20:39:07 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-10-15 11:08:38 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-10-15 19:34:36 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2025-10-15 21:53:15 +0530` - refactor(config): centralize fixture difficulty heuristic weights
