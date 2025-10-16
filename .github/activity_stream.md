@@ -1272,3 +1272,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-10-15 11:08:38 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2025-10-15 19:34:36 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2025-10-15 21:53:15 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2025-10-16 09:14:26 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
