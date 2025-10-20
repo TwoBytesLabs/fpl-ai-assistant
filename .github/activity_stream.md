@@ -1275,3 +1275,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-10-16 09:14:26 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-10-17 11:36:40 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-10-20 09:55:09 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2025-10-20 12:23:05 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
