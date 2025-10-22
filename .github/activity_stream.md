@@ -1280,3 +1280,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-10-21 12:00:47 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-10-22 10:22:48 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-10-22 14:15:28 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2025-10-22 22:50:53 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
