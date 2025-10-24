@@ -1283,3 +1283,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-10-22 22:50:53 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-10-24 16:50:03 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-10-24 16:55:32 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2025-10-24 22:37:05 +0530` - fix(data): sanitize historical price fluctuation and transfer records
