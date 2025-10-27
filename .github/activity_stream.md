@@ -1287,3 +1287,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-10-26 19:29:35 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2025-10-27 12:06:19 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-10-27 18:16:19 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2025-10-27 21:29:38 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
