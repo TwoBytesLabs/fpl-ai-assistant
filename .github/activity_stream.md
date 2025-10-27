@@ -1285,3 +1285,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-10-24 16:55:32 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-10-24 22:37:05 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-10-26 19:29:35 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2025-10-27 12:06:19 +0530` - fix(data): sanitize historical price fluctuation and transfer records
