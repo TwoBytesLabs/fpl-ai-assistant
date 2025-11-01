@@ -1291,3 +1291,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-10-28 13:28:33 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2025-10-28 17:03:58 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2025-10-30 17:25:03 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2025-11-01 12:50:36 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
