@@ -1294,3 +1294,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-11-01 12:50:36 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-11-01 17:36:44 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-11-01 19:41:07 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2025-11-02 11:10:47 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
