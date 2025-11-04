@@ -1298,3 +1298,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-11-02 21:56:03 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-11-03 13:36:01 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-11-04 15:47:35 +0530` - docs: update FPL player projection pipeline specification
+* `2025-11-04 20:30:38 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
