@@ -1300,3 +1300,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-11-04 15:47:35 +0530` - docs: update FPL player projection pipeline specification
 * `2025-11-04 20:30:38 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-11-05 19:35:09 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2025-11-08 17:27:12 +0530` - chore(deps): update data science, pandas, and scipy dependencies
