@@ -1301,3 +1301,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-11-04 20:30:38 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-11-05 19:35:09 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-11-08 17:27:12 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2025-11-11 12:29:38 +0530` - feat(ui): refine captaincy pick confidence indicator component
