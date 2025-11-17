@@ -1311,3 +1311,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-11-16 09:48:16 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-11-16 17:23:09 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-11-16 17:36:57 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2025-11-17 09:52:40 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
