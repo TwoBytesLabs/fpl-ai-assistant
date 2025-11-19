@@ -1315,3 +1315,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-11-17 21:31:38 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-11-18 14:46:23 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-11-18 18:30:24 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2025-11-19 15:39:37 +0530` - fix(data): sanitize historical price fluctuation and transfer records
