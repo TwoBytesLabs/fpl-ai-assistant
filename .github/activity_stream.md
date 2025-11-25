@@ -1319,3 +1319,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-11-20 10:01:51 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-11-20 12:49:07 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2025-11-24 16:36:56 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2025-11-25 12:02:50 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
