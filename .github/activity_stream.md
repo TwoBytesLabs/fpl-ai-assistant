@@ -1327,3 +1327,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-11-30 11:20:30 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2025-11-30 19:29:41 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2025-12-01 18:45:26 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2025-12-02 12:23:44 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
