@@ -1335,3 +1335,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-12-11 09:18:53 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2025-12-11 19:39:52 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2025-12-12 11:40:03 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2025-12-12 22:48:21 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
