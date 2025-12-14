@@ -1337,3 +1337,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-12-12 11:40:03 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-12-12 22:48:21 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2025-12-14 09:09:11 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2025-12-14 09:37:51 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
