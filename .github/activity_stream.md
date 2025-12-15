@@ -1341,3 +1341,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-12-15 10:30:15 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2025-12-15 13:45:11 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2025-12-15 17:54:05 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2025-12-15 22:19:41 +0530` - fix(data): sanitize historical price fluctuation and transfer records
