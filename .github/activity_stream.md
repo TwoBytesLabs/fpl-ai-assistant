@@ -1349,3 +1349,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-12-19 14:29:10 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2025-12-20 22:11:00 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2025-12-20 22:48:53 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2025-12-22 11:25:07 +0530` - fix(data): sanitize historical price fluctuation and transfer records
