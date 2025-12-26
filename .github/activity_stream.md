@@ -1356,3 +1356,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-12-23 19:05:29 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2025-12-24 11:45:15 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2025-12-24 22:16:59 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2025-12-26 20:37:59 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
