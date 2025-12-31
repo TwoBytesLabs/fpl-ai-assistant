@@ -1358,3 +1358,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2025-12-24 22:16:59 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2025-12-26 20:37:59 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2025-12-28 20:51:02 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2025-12-31 11:26:32 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
