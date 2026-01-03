@@ -7,3 +7,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-02 10:45:04 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-01-02 22:58:16 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-01-03 13:41:31 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-01-03 16:46:42 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
