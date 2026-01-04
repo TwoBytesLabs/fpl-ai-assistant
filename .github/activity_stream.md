@@ -10,3 +10,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-03 16:46:42 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-01-03 19:13:30 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-01-03 20:06:43 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-01-04 11:10:25 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
