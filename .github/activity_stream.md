@@ -11,3 +11,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-03 19:13:30 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-01-03 20:06:43 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-01-04 11:10:25 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2026-01-04 13:51:51 +0530` - refactor(config): centralize fixture difficulty heuristic weights
