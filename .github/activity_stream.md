@@ -16,3 +16,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-05 12:21:42 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-01-05 14:06:29 +0530` - docs: update FPL player projection pipeline specification
 * `2026-01-06 12:13:33 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-01-06 15:41:41 +0530` - feat(engine): integrate opponent defensive vulnerability index
