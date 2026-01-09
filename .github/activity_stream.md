@@ -22,3 +22,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-08 11:20:43 +0530` - docs: update FPL player projection pipeline specification
 * `2026-01-08 17:19:55 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-01-08 20:58:47 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2026-01-09 10:31:17 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
