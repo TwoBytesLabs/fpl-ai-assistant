@@ -28,3 +28,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-10 14:49:50 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-01-11 10:30:47 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-01-11 11:59:11 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2026-01-11 12:18:11 +0530` - feat(engine): integrate opponent defensive vulnerability index
