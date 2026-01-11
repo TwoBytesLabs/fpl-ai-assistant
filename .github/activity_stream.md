@@ -30,3 +30,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-11 11:59:11 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-01-11 12:18:11 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-01-11 16:11:55 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2026-01-11 19:03:16 +0530` - refactor(config): centralize fixture difficulty heuristic weights
