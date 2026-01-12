@@ -33,3 +33,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-11 19:03:16 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-01-12 11:17:38 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-01-12 16:38:02 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2026-01-12 17:02:17 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
