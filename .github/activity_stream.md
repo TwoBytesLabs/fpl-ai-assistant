@@ -35,3 +35,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-12 16:38:02 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-01-12 17:02:17 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-01-12 18:00:55 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2026-01-13 14:57:26 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
