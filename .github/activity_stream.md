@@ -38,3 +38,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-13 14:57:26 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-01-13 17:36:52 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-01-13 19:34:05 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2026-01-14 10:36:04 +0530` - fix(data): sanitize historical price fluctuation and transfer records
