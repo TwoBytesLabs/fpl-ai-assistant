@@ -40,3 +40,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-13 19:34:05 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-01-14 10:36:04 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-01-14 13:04:16 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-01-14 13:35:17 +0530` - chore(deps): update data science, pandas, and scipy dependencies
