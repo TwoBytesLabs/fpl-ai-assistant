@@ -43,3 +43,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-14 13:35:17 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-01-14 14:26:42 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-01-15 10:53:31 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-01-15 21:59:37 +0530` - fix(data): sanitize historical price fluctuation and transfer records
