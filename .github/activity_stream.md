@@ -46,3 +46,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-15 21:59:37 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-01-16 17:35:56 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-01-16 22:27:20 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2026-01-17 13:15:50 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
