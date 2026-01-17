@@ -48,3 +48,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-16 22:27:20 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-01-17 13:15:50 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-01-17 17:09:03 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2026-01-17 20:31:18 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
