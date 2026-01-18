@@ -49,3 +49,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-17 13:15:50 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-01-17 17:09:03 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-01-17 20:31:18 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-01-18 17:46:22 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
