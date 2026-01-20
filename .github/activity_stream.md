@@ -58,3 +58,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-19 22:43:10 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-01-20 10:33:04 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-01-20 16:43:34 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2026-01-20 18:16:54 +0530` - feat(ui): refine captaincy pick confidence indicator component
