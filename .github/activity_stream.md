@@ -61,3 +61,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-20 18:16:54 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-01-20 22:46:03 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-01-21 12:58:32 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2026-01-21 18:19:41 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
