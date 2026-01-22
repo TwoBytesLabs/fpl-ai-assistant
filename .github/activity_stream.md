@@ -65,3 +65,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-21 20:31:50 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-01-22 09:22:55 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-01-22 14:50:00 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-01-22 19:57:10 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
