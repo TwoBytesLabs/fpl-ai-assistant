@@ -67,3 +67,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-22 14:50:00 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-01-22 19:57:10 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-01-23 12:58:22 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-01-23 17:56:23 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
