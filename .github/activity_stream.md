@@ -71,3 +71,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-23 22:48:25 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-01-24 09:32:11 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-01-25 20:08:31 +0530` - docs: update FPL player projection pipeline specification
+* `2026-01-25 22:32:13 +0530` - test(unit): add boundary condition tests for bench boost solver
