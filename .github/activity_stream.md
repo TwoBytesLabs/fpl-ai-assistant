@@ -79,3 +79,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-27 21:35:09 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-01-28 12:54:30 +0530` - docs: update FPL player projection pipeline specification
 * `2026-01-28 15:53:09 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2026-01-28 18:51:27 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
