@@ -77,3 +77,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-26 19:18:21 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-01-27 10:38:13 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-01-27 21:35:09 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-01-28 12:54:30 +0530` - docs: update FPL player projection pipeline specification
