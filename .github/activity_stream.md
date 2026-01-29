@@ -81,3 +81,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-28 15:53:09 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-01-28 18:51:27 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-01-29 09:29:18 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2026-01-29 10:20:10 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
