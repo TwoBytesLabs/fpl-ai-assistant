@@ -80,3 +80,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-28 12:54:30 +0530` - docs: update FPL player projection pipeline specification
 * `2026-01-28 15:53:09 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-01-28 18:51:27 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-01-29 09:29:18 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
