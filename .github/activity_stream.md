@@ -83,3 +83,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-29 09:29:18 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-01-29 10:20:10 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-01-30 09:27:26 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2026-01-30 19:15:31 +0530` - fix(data): sanitize historical price fluctuation and transfer records
