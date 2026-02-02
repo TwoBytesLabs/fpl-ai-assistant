@@ -89,3 +89,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-01-31 18:16:03 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-02-01 20:56:47 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-02-02 10:01:04 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-02-02 16:48:49 +0530` - feat(engine): integrate opponent defensive vulnerability index
