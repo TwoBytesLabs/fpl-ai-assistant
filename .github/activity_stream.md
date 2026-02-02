@@ -91,3 +91,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-02 10:01:04 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-02-02 16:48:49 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-02-02 18:28:10 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-02-02 21:56:53 +0530` - feat(ui): refine captaincy pick confidence indicator component
