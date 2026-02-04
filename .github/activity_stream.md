@@ -97,3 +97,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-03 19:12:15 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-02-03 20:06:40 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-02-04 16:43:36 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-02-04 20:29:03 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
