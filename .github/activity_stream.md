@@ -99,3 +99,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-04 16:43:36 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-02-04 20:29:03 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-02-04 21:23:17 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2026-02-05 11:57:41 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
