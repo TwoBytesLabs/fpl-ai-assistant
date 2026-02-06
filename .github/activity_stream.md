@@ -101,3 +101,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-04 21:23:17 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-02-05 11:57:41 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-02-06 15:24:56 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2026-02-06 18:09:47 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
