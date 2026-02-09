@@ -110,3 +110,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-08 11:37:56 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-02-09 11:38:27 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-02-09 11:57:37 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-02-09 16:32:28 +0530` - feat(ui): refine captaincy pick confidence indicator component
