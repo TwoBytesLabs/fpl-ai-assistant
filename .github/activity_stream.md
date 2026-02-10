@@ -114,3 +114,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-09 21:02:16 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-02-09 22:50:01 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-02-10 17:43:58 +0530` - feat(engine): integrate opponent defensive vulnerability index
+* `2026-02-10 20:39:22 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
