@@ -116,3 +116,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-10 17:43:58 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-02-10 20:39:22 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-02-10 20:50:42 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2026-02-10 21:27:35 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
