@@ -120,3 +120,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-11 11:36:07 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-02-11 12:27:57 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-02-11 21:23:03 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2026-02-12 11:45:12 +0530` - docs: update FPL player projection pipeline specification
