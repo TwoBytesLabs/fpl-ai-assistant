@@ -129,3 +129,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-13 15:29:34 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-02-13 21:01:33 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-02-14 19:47:33 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-02-14 22:21:32 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
