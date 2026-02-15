@@ -131,3 +131,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-14 19:47:33 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-02-14 22:21:32 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-02-15 20:32:19 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-02-15 22:57:38 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
