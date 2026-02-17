@@ -133,3 +133,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-15 20:32:19 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-02-15 22:57:38 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-02-16 14:29:23 +0530` - docs: update FPL player projection pipeline specification
+* `2026-02-17 19:34:44 +0530` - chore(deps): update data science, pandas, and scipy dependencies
