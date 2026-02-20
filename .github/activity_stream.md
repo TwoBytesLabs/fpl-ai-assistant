@@ -140,3 +140,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-19 20:42:48 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-02-20 09:04:36 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-02-20 09:15:37 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-02-20 16:49:14 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
