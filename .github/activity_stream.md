@@ -147,3 +147,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-21 15:04:38 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-02-21 15:17:51 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-02-22 14:42:16 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-02-23 12:24:26 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
