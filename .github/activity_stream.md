@@ -150,3 +150,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-23 12:24:26 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-02-23 13:09:43 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-02-23 17:18:54 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2026-02-23 17:31:46 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
