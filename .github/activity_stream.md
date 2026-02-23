@@ -149,3 +149,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-22 14:42:16 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-02-23 12:24:26 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-02-23 13:09:43 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-02-23 17:18:54 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
