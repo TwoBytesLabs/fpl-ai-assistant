@@ -158,3 +158,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-24 17:14:13 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-02-24 20:43:22 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-02-25 17:41:17 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-02-25 21:36:27 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
