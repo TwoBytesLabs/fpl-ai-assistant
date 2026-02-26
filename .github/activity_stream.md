@@ -160,3 +160,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-25 17:41:17 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-02-25 21:36:27 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-02-26 11:59:20 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2026-02-26 16:55:16 +0530` - feat(ui): refine captaincy pick confidence indicator component
