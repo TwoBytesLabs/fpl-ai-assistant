@@ -161,3 +161,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-25 21:36:27 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-02-26 11:59:20 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-02-26 16:55:16 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2026-02-27 10:04:35 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
