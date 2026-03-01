@@ -167,3 +167,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-02-28 15:49:17 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-02-28 19:43:56 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-03-01 10:58:02 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-03-01 12:29:01 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
