@@ -170,3 +170,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-01 12:29:01 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-03-01 15:38:31 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-03-02 11:11:46 +0530` - docs: update FPL player projection pipeline specification
+* `2026-03-02 13:54:17 +0530` - fix(data): sanitize historical price fluctuation and transfer records
