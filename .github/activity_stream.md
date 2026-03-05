@@ -176,3 +176,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-02 18:22:54 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-03-04 09:45:22 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-03-04 20:51:16 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2026-03-05 12:30:22 +0530` - fix(data): sanitize historical price fluctuation and transfer records
