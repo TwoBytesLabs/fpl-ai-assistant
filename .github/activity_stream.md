@@ -192,3 +192,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-10 12:49:21 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-03-10 15:31:52 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-03-10 18:12:04 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2026-03-10 18:56:55 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
