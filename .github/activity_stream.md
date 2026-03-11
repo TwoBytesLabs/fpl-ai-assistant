@@ -194,3 +194,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-10 18:12:04 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-03-10 18:56:55 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-03-10 21:25:15 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2026-03-11 09:21:06 +0530` - chore(deps): update data science, pandas, and scipy dependencies
