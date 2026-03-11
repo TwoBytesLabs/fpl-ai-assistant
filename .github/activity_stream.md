@@ -196,3 +196,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-10 21:25:15 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-03-11 09:21:06 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-03-11 10:33:12 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-03-11 10:51:54 +0530` - refactor(config): centralize fixture difficulty heuristic weights
