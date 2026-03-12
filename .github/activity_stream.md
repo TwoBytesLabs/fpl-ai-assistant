@@ -201,3 +201,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-11 17:25:20 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-03-11 19:55:43 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-03-12 14:48:29 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2026-03-12 15:28:28 +0530` - refactor(config): centralize fixture difficulty heuristic weights
