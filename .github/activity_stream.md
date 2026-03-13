@@ -204,3 +204,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-12 15:28:28 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-03-13 10:17:46 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-03-13 11:54:59 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2026-03-13 19:11:08 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
