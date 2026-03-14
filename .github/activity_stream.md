@@ -207,3 +207,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-13 19:11:08 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-03-14 14:36:58 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-03-14 17:15:17 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-03-14 21:22:38 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
