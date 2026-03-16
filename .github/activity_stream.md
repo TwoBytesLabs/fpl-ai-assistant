@@ -212,3 +212,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-15 16:17:02 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-03-15 17:20:34 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-03-15 18:22:18 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-03-16 09:58:56 +0530` - refactor(config): centralize fixture difficulty heuristic weights
