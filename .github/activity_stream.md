@@ -218,3 +218,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-17 17:47:32 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-03-17 18:49:58 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-03-17 20:43:49 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-03-18 18:24:44 +0530` - feat(engine): integrate opponent defensive vulnerability index
