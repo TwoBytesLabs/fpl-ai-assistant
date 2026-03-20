@@ -225,3 +225,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-20 11:04:35 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-03-20 12:01:57 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-03-20 12:12:17 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-03-20 14:58:41 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
