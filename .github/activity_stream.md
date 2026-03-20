@@ -222,3 +222,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-18 20:07:26 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-03-19 14:33:20 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-03-19 15:46:30 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-03-20 11:04:35 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
