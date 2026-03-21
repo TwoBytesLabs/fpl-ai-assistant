@@ -229,3 +229,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-20 17:59:26 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-03-20 21:50:01 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-03-21 14:15:10 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2026-03-21 14:19:00 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
