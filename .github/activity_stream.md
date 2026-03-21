@@ -228,3 +228,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-20 14:58:41 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-03-20 17:59:26 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-03-20 21:50:01 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-03-21 14:15:10 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
