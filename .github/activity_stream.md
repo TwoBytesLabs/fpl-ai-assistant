@@ -232,3 +232,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-21 14:19:00 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-03-21 18:03:49 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-03-21 21:59:26 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-03-22 11:02:27 +0530` - refactor(config): centralize fixture difficulty heuristic weights
