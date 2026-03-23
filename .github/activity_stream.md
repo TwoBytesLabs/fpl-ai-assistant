@@ -236,3 +236,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-22 16:29:57 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-03-22 18:14:13 +0530` - docs: update FPL player projection pipeline specification
 * `2026-03-23 16:44:33 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2026-03-23 17:35:59 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
