@@ -239,3 +239,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-23 17:35:59 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-03-23 18:56:53 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-03-23 21:40:22 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-03-24 14:02:19 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
