@@ -242,3 +242,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-24 14:02:19 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-03-24 16:10:45 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-03-24 21:07:54 +0530` - feat(engine): integrate opponent defensive vulnerability index
+* `2026-03-25 13:43:24 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
