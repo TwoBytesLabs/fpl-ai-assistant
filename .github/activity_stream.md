@@ -247,3 +247,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-26 20:13:20 +0530` - docs: update FPL player projection pipeline specification
 * `2026-03-28 09:41:16 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-03-28 13:04:24 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-03-28 16:42:48 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
