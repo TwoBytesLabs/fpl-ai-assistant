@@ -250,3 +250,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-28 16:42:48 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-03-28 18:45:33 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-03-29 09:23:18 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2026-03-29 12:04:50 +0530` - chore(deps): update data science, pandas, and scipy dependencies
