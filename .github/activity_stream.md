@@ -253,3 +253,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-03-29 12:04:50 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-03-29 14:09:18 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-03-30 14:31:54 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-03-30 18:14:38 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
