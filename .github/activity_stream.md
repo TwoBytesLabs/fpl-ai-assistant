@@ -259,3 +259,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-02 13:41:20 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-04-02 14:05:45 +0530` - docs: update FPL player projection pipeline specification
 * `2026-04-02 17:25:07 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-04-02 17:47:38 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
