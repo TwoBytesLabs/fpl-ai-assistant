@@ -257,3 +257,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-01 10:13:35 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-04-01 16:00:53 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-04-02 13:41:20 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-04-02 14:05:45 +0530` - docs: update FPL player projection pipeline specification
