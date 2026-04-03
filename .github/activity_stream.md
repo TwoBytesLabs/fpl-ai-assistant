@@ -265,3 +265,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-03 15:15:24 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-04-03 18:48:20 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-04-03 21:01:49 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2026-04-03 22:38:32 +0530` - refactor(config): centralize fixture difficulty heuristic weights
