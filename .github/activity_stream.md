@@ -267,3 +267,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-03 21:01:49 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-04-03 22:38:32 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-04-04 11:33:05 +0530` - feat(engine): integrate opponent defensive vulnerability index
+* `2026-04-04 14:28:32 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
