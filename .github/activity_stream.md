@@ -268,3 +268,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-03 22:38:32 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-04-04 11:33:05 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-04-04 14:28:32 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2026-04-04 20:05:59 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
