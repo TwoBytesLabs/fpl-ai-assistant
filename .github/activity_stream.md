@@ -272,3 +272,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-05 14:31:29 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-04-05 17:13:15 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-04-05 19:31:02 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2026-04-05 20:04:15 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
