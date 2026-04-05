@@ -271,3 +271,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-04 20:05:59 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-04-05 14:31:29 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-04-05 17:13:15 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2026-04-05 19:31:02 +0530` - chore(deps): update data science, pandas, and scipy dependencies
