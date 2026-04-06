@@ -275,3 +275,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-05 20:04:15 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-04-05 20:10:10 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-04-06 12:46:18 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2026-04-06 19:47:45 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
