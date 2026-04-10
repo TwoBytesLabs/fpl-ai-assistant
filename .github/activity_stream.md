@@ -280,3 +280,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-08 12:33:52 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-04-08 17:52:51 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-04-08 19:17:11 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-04-10 10:48:43 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
