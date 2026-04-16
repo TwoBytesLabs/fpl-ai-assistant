@@ -291,3 +291,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-14 13:56:32 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-04-15 11:42:37 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-04-15 12:39:39 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-04-16 11:29:47 +0530` - chore(deps): update data science, pandas, and scipy dependencies
