@@ -295,3 +295,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-16 16:46:07 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-04-16 17:53:39 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-04-16 19:34:51 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-04-17 16:21:27 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
