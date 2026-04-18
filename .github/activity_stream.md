@@ -298,3 +298,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-17 16:21:27 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-04-17 22:39:58 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-04-18 11:23:41 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-04-18 18:25:05 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
