@@ -304,3 +304,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-19 09:09:35 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-04-20 14:03:53 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-04-21 09:29:23 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2026-04-21 19:26:58 +0530` - docs: update FPL player projection pipeline specification
