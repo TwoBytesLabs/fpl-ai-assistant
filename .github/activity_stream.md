@@ -310,3 +310,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-22 22:40:19 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-04-23 17:44:36 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-04-23 18:26:18 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-04-23 19:18:07 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
