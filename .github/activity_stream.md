@@ -318,3 +318,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-27 10:26:54 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-04-27 22:53:38 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-04-28 17:57:37 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-04-28 18:02:14 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
