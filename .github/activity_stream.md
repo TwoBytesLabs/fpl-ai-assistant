@@ -324,3 +324,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-29 09:56:14 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-04-29 10:17:33 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-04-29 16:20:19 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2026-04-30 14:56:24 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
