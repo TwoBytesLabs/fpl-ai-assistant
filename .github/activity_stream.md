@@ -326,3 +326,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-04-29 16:20:19 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-04-30 14:56:24 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-04-30 16:57:17 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2026-04-30 19:08:46 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
