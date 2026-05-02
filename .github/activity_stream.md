@@ -331,3 +331,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-01 13:53:20 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-05-01 17:28:24 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-05-01 22:06:15 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2026-05-02 11:36:36 +0530` - feat(ui): refine captaincy pick confidence indicator component
