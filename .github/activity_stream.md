@@ -333,3 +333,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-01 22:06:15 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-05-02 11:36:36 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-05-03 09:11:22 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-05-04 10:14:19 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
