@@ -336,3 +336,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-04 10:14:19 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-05-04 10:34:20 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-05-04 15:33:23 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-05-04 16:15:12 +0530` - feat(ui): refine captaincy pick confidence indicator component
