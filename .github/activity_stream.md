@@ -340,3 +340,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-04 22:37:33 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-05-05 09:21:23 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-05-05 14:59:10 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2026-05-05 15:44:43 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
