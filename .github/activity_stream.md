@@ -338,3 +338,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-04 15:33:23 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-05-04 16:15:12 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-05-04 22:37:33 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2026-05-05 09:21:23 +0530` - fix(data): sanitize historical price fluctuation and transfer records
