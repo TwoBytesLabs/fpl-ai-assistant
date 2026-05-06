@@ -344,3 +344,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-05 18:22:16 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-05-05 20:56:11 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-05-06 20:16:45 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-05-06 21:30:03 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
