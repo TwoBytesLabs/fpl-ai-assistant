@@ -346,3 +346,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-06 20:16:45 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-05-06 21:30:03 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-05-07 13:09:25 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-05-08 11:04:30 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
