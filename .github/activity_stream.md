@@ -350,3 +350,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-08 13:25:47 +0530` - docs: update FPL player projection pipeline specification
 * `2026-05-08 16:43:21 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-05-09 17:30:03 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-05-09 21:22:37 +0530` - feat(engine): integrate opponent defensive vulnerability index
