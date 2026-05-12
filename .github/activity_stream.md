@@ -352,3 +352,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-09 17:30:03 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-05-09 21:22:37 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-05-10 10:47:15 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-05-12 10:30:15 +0530` - fix(data): sanitize historical price fluctuation and transfer records
