@@ -359,3 +359,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-13 17:01:32 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-05-13 22:33:54 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-05-14 10:50:40 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2026-05-14 11:41:50 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
