@@ -367,3 +367,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-15 11:17:51 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-05-15 12:46:31 +0530` - docs: update FPL player projection pipeline specification
 * `2026-05-15 18:58:40 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2026-05-16 16:17:46 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
