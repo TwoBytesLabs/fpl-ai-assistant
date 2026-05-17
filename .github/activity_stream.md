@@ -368,3 +368,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-15 12:46:31 +0530` - docs: update FPL player projection pipeline specification
 * `2026-05-15 18:58:40 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-05-16 16:17:46 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-05-17 15:04:32 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
