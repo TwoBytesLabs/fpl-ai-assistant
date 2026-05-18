@@ -372,3 +372,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-17 22:44:48 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-05-17 22:56:06 +0530` - docs: update FPL player projection pipeline specification
 * `2026-05-18 11:54:22 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-05-18 14:22:21 +0530` - refactor(config): centralize fixture difficulty heuristic weights
