@@ -375,3 +375,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-18 14:22:21 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-05-18 18:29:42 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-05-19 09:45:38 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-05-19 10:09:45 +0530` - chore(deps): update data science, pandas, and scipy dependencies
