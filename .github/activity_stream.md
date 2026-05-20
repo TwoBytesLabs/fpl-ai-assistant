@@ -380,3 +380,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-19 22:17:01 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-05-19 22:44:40 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-05-20 12:11:26 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-05-20 14:21:05 +0530` - feat(engine): integrate opponent defensive vulnerability index
