@@ -382,3 +382,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-20 12:11:26 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-05-20 14:21:05 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-05-20 17:13:32 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2026-05-21 16:56:03 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
