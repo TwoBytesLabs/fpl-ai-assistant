@@ -397,3 +397,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-24 19:41:55 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-05-25 10:11:45 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-05-25 15:39:18 +0530` - docs: update FPL player projection pipeline specification
+* `2026-05-25 17:27:37 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
