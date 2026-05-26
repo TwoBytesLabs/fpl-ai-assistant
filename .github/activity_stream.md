@@ -399,3 +399,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-25 15:39:18 +0530` - docs: update FPL player projection pipeline specification
 * `2026-05-25 17:27:37 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-05-26 11:04:44 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2026-05-26 11:26:39 +0530` - refactor(config): centralize fixture difficulty heuristic weights
