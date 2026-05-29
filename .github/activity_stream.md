@@ -406,3 +406,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-28 10:29:46 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-05-28 11:37:19 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-05-28 18:04:09 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2026-05-29 13:30:00 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
