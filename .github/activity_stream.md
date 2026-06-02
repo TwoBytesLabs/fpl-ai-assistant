@@ -414,3 +414,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-05-31 21:50:02 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-05-31 22:49:02 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-06-01 11:44:27 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-06-02 21:01:01 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
