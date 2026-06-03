@@ -417,3 +417,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-02 21:01:01 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-06-02 21:15:53 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-06-02 21:28:46 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-06-03 09:46:51 +0530` - feat(engine): integrate opponent defensive vulnerability index
