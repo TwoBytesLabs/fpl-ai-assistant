@@ -419,3 +419,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-02 21:28:46 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-06-03 09:46:51 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-06-03 10:15:21 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-06-03 14:07:49 +0530` - chore(deps): update data science, pandas, and scipy dependencies
