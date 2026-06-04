@@ -420,3 +420,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-03 09:46:51 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-06-03 10:15:21 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-06-03 14:07:49 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2026-06-04 09:12:53 +0530` - docs: update FPL player projection pipeline specification
