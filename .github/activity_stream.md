@@ -430,3 +430,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-06 13:15:35 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-06-06 14:00:36 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-06-06 22:35:05 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-06-07 14:28:02 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
