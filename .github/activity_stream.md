@@ -434,3 +434,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-07 17:19:54 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-06-07 20:03:54 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-06-08 13:18:18 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-06-08 18:39:05 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
