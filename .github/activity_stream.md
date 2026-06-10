@@ -441,3 +441,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-09 16:44:19 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-06-09 21:40:08 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-06-10 09:23:23 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-06-10 22:16:20 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
