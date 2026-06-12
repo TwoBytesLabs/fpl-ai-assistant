@@ -446,3 +446,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-11 18:14:43 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-06-11 22:47:37 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-06-12 10:36:58 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-06-12 13:41:52 +0530` - docs: update FPL player projection pipeline specification
