@@ -445,3 +445,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-11 16:31:22 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-06-11 18:14:43 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-06-11 22:47:37 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-06-12 10:36:58 +0530` - fix(data): sanitize historical price fluctuation and transfer records
