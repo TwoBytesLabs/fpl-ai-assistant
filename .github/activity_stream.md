@@ -465,3 +465,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-23 11:07:16 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-06-23 18:26:12 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-06-23 19:44:16 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-06-24 15:50:44 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
