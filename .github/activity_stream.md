@@ -467,3 +467,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-23 19:44:16 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-06-24 15:50:44 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-06-24 18:51:46 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2026-06-24 20:52:24 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
