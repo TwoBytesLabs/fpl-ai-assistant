@@ -476,3 +476,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-28 15:29:49 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-06-28 22:52:50 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-06-29 14:28:48 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2026-06-29 19:09:52 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
