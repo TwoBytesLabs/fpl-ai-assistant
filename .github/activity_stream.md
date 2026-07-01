@@ -480,3 +480,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-06-29 22:18:18 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-06-30 14:12:39 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-06-30 19:26:28 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2026-07-01 10:59:25 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
