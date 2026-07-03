@@ -483,3 +483,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-01 10:59:25 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-07-01 17:41:58 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-07-02 13:07:38 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2026-07-03 11:46:47 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
