@@ -485,3 +485,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-02 13:07:38 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-07-03 11:46:47 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-07-03 13:06:29 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-07-03 16:44:02 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
