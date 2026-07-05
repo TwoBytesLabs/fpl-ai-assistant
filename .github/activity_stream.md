@@ -490,3 +490,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-04 20:53:01 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-07-05 14:14:59 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-07-05 16:42:02 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-07-05 20:12:18 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
