@@ -496,3 +496,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-06 15:28:22 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-07-06 20:34:05 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-07-06 21:38:30 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-07-07 18:37:27 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
