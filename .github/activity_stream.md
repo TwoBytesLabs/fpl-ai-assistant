@@ -498,3 +498,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-06 21:38:30 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-07-07 18:37:27 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-07-08 09:21:45 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-07-08 17:56:04 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
