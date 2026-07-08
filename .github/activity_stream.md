@@ -500,3 +500,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-08 09:21:45 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-07-08 17:56:04 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-07-08 18:05:23 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-07-08 20:01:11 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
