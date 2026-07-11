@@ -506,3 +506,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-09 18:06:09 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-07-09 21:59:10 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-07-10 17:24:49 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-07-11 09:34:58 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
