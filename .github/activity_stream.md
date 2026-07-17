@@ -526,3 +526,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-16 14:53:21 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-07-16 18:45:33 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-07-17 11:51:58 +0530` - docs: update FPL player projection pipeline specification
+* `2026-07-17 15:23:50 +0530` - feat(ui): refine captaincy pick confidence indicator component
