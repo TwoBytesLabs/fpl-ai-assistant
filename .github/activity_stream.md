@@ -531,3 +531,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-18 18:47:36 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-07-18 22:23:32 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-07-19 14:13:58 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-07-19 17:10:55 +0530` - feat(ui): refine captaincy pick confidence indicator component
