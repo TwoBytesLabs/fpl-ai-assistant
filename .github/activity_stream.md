@@ -534,3 +534,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-19 17:10:55 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-07-20 09:50:53 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-07-20 11:47:08 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2026-07-20 14:32:50 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
