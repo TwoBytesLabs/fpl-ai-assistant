@@ -544,3 +544,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-22 19:21:23 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-07-22 20:23:59 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-07-22 20:35:07 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2026-07-22 20:41:00 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
