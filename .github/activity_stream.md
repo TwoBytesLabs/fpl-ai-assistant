@@ -545,3 +545,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-22 20:23:59 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-07-22 20:35:07 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-07-22 20:41:00 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2026-07-23 22:56:19 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
