@@ -552,3 +552,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-24 20:24:09 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-07-25 10:17:20 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-07-25 11:15:26 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-07-25 15:16:48 +0530` - feat(ui): refine captaincy pick confidence indicator component
