@@ -555,3 +555,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-25 15:16:48 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-07-25 17:21:35 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-07-25 22:02:01 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-07-26 17:22:06 +0530` - refactor(config): centralize fixture difficulty heuristic weights
