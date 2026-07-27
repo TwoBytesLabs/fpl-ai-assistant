@@ -557,3 +557,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-25 22:02:01 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-07-26 17:22:06 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-07-26 22:00:15 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-07-27 13:56:22 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
