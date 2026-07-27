@@ -560,3 +560,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-27 13:56:22 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-07-27 15:44:02 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-07-27 18:46:56 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2026-07-27 18:51:41 +0530` - feat(engine): integrate opponent defensive vulnerability index
