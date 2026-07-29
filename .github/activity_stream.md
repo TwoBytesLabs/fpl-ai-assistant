@@ -565,3 +565,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-28 19:21:46 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-07-29 10:46:36 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-07-29 15:46:06 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2026-07-29 17:18:20 +0530` - feat(ui): refine captaincy pick confidence indicator component
