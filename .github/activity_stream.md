@@ -564,3 +564,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-28 10:31:41 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-07-28 19:21:46 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-07-29 10:46:36 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2026-07-29 15:46:06 +0530` - chore(deps): update data science, pandas, and scipy dependencies
