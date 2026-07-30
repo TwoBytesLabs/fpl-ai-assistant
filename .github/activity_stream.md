@@ -569,3 +569,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-29 22:34:22 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-07-30 09:12:03 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-07-30 12:58:05 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-07-30 22:18:53 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
