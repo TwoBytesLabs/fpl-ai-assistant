@@ -573,3 +573,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-30 22:28:10 +0530` - docs: update FPL player projection pipeline specification
 * `2026-07-31 10:46:56 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-07-31 17:20:48 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
+* `2026-08-01 11:54:01 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
