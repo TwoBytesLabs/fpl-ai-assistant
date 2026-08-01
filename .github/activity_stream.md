@@ -575,3 +575,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-07-31 17:20:48 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-08-01 11:54:01 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-08-01 20:17:19 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2026-08-01 22:21:47 +0530` - fix(data): sanitize historical price fluctuation and transfer records
