@@ -576,3 +576,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-01 11:54:01 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-08-01 20:17:19 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-08-01 22:21:47 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-08-02 13:53:09 +0530` - refactor(config): centralize fixture difficulty heuristic weights
