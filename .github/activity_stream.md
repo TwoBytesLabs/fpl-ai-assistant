@@ -582,3 +582,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-03 10:06:39 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-08-03 15:46:09 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-08-04 17:35:54 +0530` - feat(engine): integrate opponent defensive vulnerability index
+* `2026-08-04 20:45:51 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
