@@ -586,3 +586,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-05 09:03:35 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-08-05 11:22:12 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-08-05 22:40:06 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2026-08-06 13:08:42 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
