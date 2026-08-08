@@ -591,3 +591,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-07 19:14:22 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-08-08 10:20:36 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-08-08 10:57:32 +0530` - feat(ui): refine captaincy pick confidence indicator component
+* `2026-08-08 13:25:42 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
