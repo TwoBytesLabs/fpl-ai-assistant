@@ -594,3 +594,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-08 13:25:42 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-08-08 16:09:54 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-08-09 09:55:36 +0530` - docs: update FPL player projection pipeline specification
+* `2026-08-09 14:36:05 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
