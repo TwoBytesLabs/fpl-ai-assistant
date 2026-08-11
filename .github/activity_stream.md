@@ -597,3 +597,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-09 14:36:05 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-08-10 15:55:56 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-08-10 18:12:09 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-08-11 12:07:18 +0530` - feat(engine): integrate opponent defensive vulnerability index
