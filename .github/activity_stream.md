@@ -606,3 +606,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-13 15:29:51 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-08-13 17:54:47 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-08-13 20:41:21 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-08-13 22:46:40 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
