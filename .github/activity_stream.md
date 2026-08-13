@@ -604,3 +604,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-12 19:42:20 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-08-13 09:26:40 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-08-13 15:29:51 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
+* `2026-08-13 17:54:47 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
