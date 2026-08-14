@@ -608,3 +608,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-13 20:41:21 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-08-13 22:46:40 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-08-14 12:32:32 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-08-14 16:00:02 +0530` - chore(deps): update data science, pandas, and scipy dependencies
