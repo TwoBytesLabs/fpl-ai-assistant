@@ -615,3 +615,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-16 17:04:53 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-08-16 20:04:53 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-08-16 22:50:40 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
+* `2026-08-17 10:37:44 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
