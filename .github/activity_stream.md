@@ -620,3 +620,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-18 16:47:22 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-08-18 19:05:34 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-08-19 12:17:09 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-08-19 14:21:05 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
