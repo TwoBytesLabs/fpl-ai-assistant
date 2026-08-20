@@ -624,3 +624,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-19 18:03:35 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-08-19 18:13:06 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-08-20 10:05:42 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2026-08-20 11:31:46 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
