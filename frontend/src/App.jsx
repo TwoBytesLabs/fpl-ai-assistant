@@ -468,9 +468,12 @@ function MinimalLanding({ image, setImage, transfers, setTransfers, fileInputRef
           className="pitch-container" 
           style={{ cursor: 'pointer' }}
           onClick={() => fileInputRef.current && fileInputRef.current.click()}
-          onDrop={handleDrop}
+          onDrop={(e) => { e.preventDefault(); e.stopPropagation(); handleDrop(e); }}
           onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
+          onDragEnter={(e) => { e.preventDefault(); e.stopPropagation(); }}
+          onDragLeave={(e) => { e.preventDefault(); e.stopPropagation(); }}
         >
+          <input type="file" ref={fileInputRef} onChange={(e) => { if(e.target.files[0]) setImage(e.target.files[0]); }} style={{ display: 'none' }} accept="image/*" />
           
           {/* Blueprint SVG (Stage 1) */}
           <div className="pitch-center-text">
@@ -487,71 +490,19 @@ function MinimalLanding({ image, setImage, transfers, setTransfers, fileInputRef
             <span style={{ fontSize: '0.9rem', color: '#a3a3a3' }}>or click to browse</span>
           </div>
           <svg viewBox="0 0 800 500" className="blueprint-svg" preserveAspectRatio="none">
-            {/* Outer Boundary */}
             <rect x="0" y="0" width="800" height="500" />
-            {/* Halfway Line */}
             <line x1="400" y1="0" x2="400" y2="500" />
-            {/* Center Circle */}
             <circle cx="400" cy="250" r="75" />
             <circle cx="400" cy="250" r="3" fill="currentColor" />
-            
-            {/* Left Penalty Area */}
             <rect x="0" y="109" width="132" height="282" />
-            {/* Left Goal Area */}
             <rect x="0" y="183.5" width="44" height="133" />
-            {/* Left Penalty Spot */}
-            <circle cx="88" cy="250" r="3" fill="currentColor" />
-            {/* Left Penalty Arc (D) */}
-            <path d="M 132 195 A 73 73 0 0 1 132 305" />
-            
-            {/* Right Penalty Area */}
+            <path d="M 132 205.5 A 75 75 0 0 1 132 294.5" />
             <rect x="668" y="109" width="132" height="282" />
-            {/* Right Goal Area */}
             <rect x="756" y="183.5" width="44" height="133" />
-            {/* Right Penalty Spot */}
-            <circle cx="712" cy="250" r="3" fill="currentColor" />
-            {/* Right Penalty Arc (D) */}
-            <path d="M 668 195 A 73 73 0 0 0 668 305" />
-
-            {/* Corner Arcs */}
-            <path d="M 0 15 A 15 15 0 0 0 15 0" />
-            <path d="M 785 0 A 15 15 0 0 0 800 15" />
-            <path d="M 800 485 A 15 15 0 0 0 785 500" />
-            <path d="M 15 500 A 15 15 0 0 0 0 485" />
+            <path d="M 668 205.5 A 75 75 0 0 0 668 294.5" />
           </svg>
 
-          {/* Solid 3D Pitch Slab (Stage 2) */}
-          <div className="pitch-slab">
-            <div className="slab-face top"></div>
-            <div className="slab-face bottom"></div>
-            <div className="slab-face front"></div>
-            <div className="slab-face back"></div>
-            <div className="slab-face left"></div>
-            <div className="slab-face right"></div>
-            
-            {/* 3D Goals (Stage 3) */}
-            <div className="true-goal left-goal">
-              <div className="post post-1"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
-              <div className="post post-2"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
-              <div className="crossbar"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
-              
-            </div>
-            
-            <div className="true-goal right-goal">
-              <div className="post post-1"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
-              <div className="post post-2"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
-              <div className="crossbar"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
-              
-            </div>
 
-            {/* Corner Flags (Stage 3) */}
-            <div className="corner-flags-3d">
-              <div className="corner-flag bottom-left"><div className="pole"></div><div className="flag-cloth"></div></div>
-              <div className="corner-flag bottom-right"><div className="pole"></div><div className="flag-cloth"></div></div>
-              <div className="corner-flag top-left"><div className="pole"></div><div className="flag-cloth"></div></div>
-              <div className="corner-flag top-right"><div className="pole"></div><div className="flag-cloth"></div></div>
-            </div>
-          </div>
         </div>
       </div>
         {image && (

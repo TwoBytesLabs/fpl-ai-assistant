@@ -404,24 +404,8 @@ body {
   z-index: 2;
 }
 /* Tactical board lines */
-.pitch-container::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 0; right: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.15);
-  z-index: 0;
-}
-.pitch-container::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px; height: 70px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  z-index: 0;
-}
+
+
 
 .pitch-container.empty { min-height: 300px; background: transparent; border: 1px dashed var(--border); }
 .pitch-container.empty::before, .pitch-container.empty::after { display: none; }
@@ -1072,19 +1056,42 @@ body {
   
 }
 
+
+
 .pitch-container {
   position: relative;
   width: 75vw; max-width: 800px;
   height: 45vh; max-height: 500px;
-  transform-style: preserve-3d;
-  /* NO OPACITY ANIMATION HERE, EVER. IT FLATTENS 3D. */
-  animation: cameraMove 5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: cameraMove 9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, fadePitchBg 9s ease forwards;
+  will-change: transform, background-color, border, box-shadow;
+  border-radius: 8px;
+}
+
+@keyframes fadePitchBg {
+  0%, 25% { 
+    background-color: transparent; 
+    border: 1px solid transparent; 
+    box-shadow: none; 
+    background-image: none;
+  }
+  35%, 95% { 
+    background-color: #022c22;
+    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 10%, rgba(16, 185, 129, 0.05) 10%, rgba(16, 185, 129, 0.05) 20%);
+    border: 1px solid transparent; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+  }
+  98%, 100% { 
+    background-color: #022c22;
+    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 10%, rgba(16, 185, 129, 0.05) 10%, rgba(16, 185, 129, 0.05) 20%);
+    border: 2px dashed rgba(0, 255, 135, 0.4); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 0 50px rgba(0, 255, 135, 0.05); 
+  }
 }
 
 @keyframes cameraMove {
-  0%, 5% { transform: rotateX(55deg) rotateZ(-10deg) scale(0.8) translateZ(-400px); }
-  25%, 70% { transform: rotateX(55deg) rotateZ(-10deg) scale(1) translateZ(0); }
-  85%, 100% { transform: rotateX(0deg) rotateZ(0deg) scale(0.95) translateZ(0); }
+  0%, 5% { transform: rotateX(55deg) rotateZ(-10deg) scale(0.8) translateZ(0); }
+  25%, 55% { transform: rotateX(55deg) rotateZ(-10deg) scale(1) translateZ(0); }
+  90%, 100% { transform: rotateX(0deg) rotateZ(0deg) scale(0.95) translateZ(0); }
 }
 
 /* === STAGE 1: BLUEPRINT SKETCH === */
@@ -1094,14 +1101,14 @@ body {
   width: 100%; height: 100%;
   transform: translateZ(1px);
   z-index: 2;
-  /* Opacity here is fine because it's a 2D child that doesn't have 3D children! */
-  animation: fadeBlueprint 5s ease forwards;
+  animation: fadeBlueprint 9s ease forwards;
+  will-change: opacity;
 }
 
 @keyframes fadeBlueprint {
   0%, 40% { opacity: 1; }
   45%, 55% { opacity: 0.15; }
-  60%, 100% { opacity: 0; display: none; }
+  60%, 100% { opacity: 0; }
 }
 
 .blueprint-svg path, .blueprint-svg rect, .blueprint-svg line, .blueprint-svg circle {
@@ -1111,14 +1118,12 @@ body {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
   filter: drop-shadow(0 0 3px rgba(255,255,255,0.8)) drop-shadow(0 0 10px rgba(52,211,153,0.8));
-  animation: drawBlueprint 5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: drawBlueprint 9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 @keyframes drawBlueprint {
-  0%, 5% { stroke-dashoffset: 3000; opacity: 1; }
-  25%, 35% { stroke-dashoffset: 0; opacity: 1; }
-  45%, 55% { stroke-dashoffset: 0; opacity: 0.3; }
-  60%, 100% { stroke-dashoffset: 0; opacity: 0; }
+  0%, 5% { stroke-dashoffset: 3000; }
+  25%, 100% { stroke-dashoffset: 0; }
 }
 
 @keyframes riseSlab {
@@ -1127,81 +1132,13 @@ body {
   35%, 100% { transform: translateZ(0) scaleZ(1); visibility: visible; }
 }
 
-.slab-face {
-  position: absolute;
-  backface-visibility: visible;
-  transform-style: preserve-3d;
-}
 
 /* Base transparent state for colors so we can fade them */
-.slab-face.top {
-  inset: 0;
-  transform: translateZ(10px);
-  animation: fadeTopFace 5s ease forwards;
-}
-@keyframes fadeTopFace {
-  0%, 25% { background-color: transparent; box-shadow: none; background-image: none; border: 1px solid transparent; }
-  35%, 90% { 
-    background-color: #2b5d34;
-    background-image: 
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 10%, transparent 10%, transparent 20%),
-      radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
-    border: 1px solid transparent;
-  }
-  95%, 100% { 
-    background-color: #2b5d34;
-    background-image: 
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 10%, transparent 10%, transparent 20%),
-      radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
-    border: 2px dashed rgba(255, 255, 255, 0.5);
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.4);
-  }
-}
 
-@keyframes fadeBottomFace {
-  0%, 25% { background-color: transparent; box-shadow: none; }
-  35%, 100% { background-color: #011410; box-shadow: 0 20px 50px rgba(0,0,0,0.9); }
-}
 
-.slab-face.front {
-  top: 100%; left: 0; width: 100%; height: 20px;
-  transform-origin: top; transform: rotateX(-90deg);
-  animation: fadeFrontFace 5s ease forwards;
-}
-@keyframes fadeFrontFace {
-  0%, 25% { background-color: transparent; border-bottom: none; }
-  35%, 100% { background-color: #022019; border-bottom: 2px solid rgba(52, 211, 153, 0.4); }
-}
 
-.slab-face.back {
-  bottom: 100%; left: 0; width: 100%; height: 20px;
-  transform-origin: bottom; transform: rotateX(90deg);
-  animation: fadeBackFace 5s ease forwards;
-}
-@keyframes fadeBackFace {
-  0%, 25% { background-color: transparent; }
-  35%, 100% { background-color: #011410; }
-}
 
-.slab-face.left {
-  right: 100%; top: 0; width: 20px; height: 100%;
-  transform-origin: right; transform: rotateY(-90deg);
-  animation: fadeLeftFace 5s ease forwards;
-}
-@keyframes fadeLeftFace {
-  0%, 25% { background-color: transparent; border-left: none; }
-  35%, 100% { background-color: #02251c; border-left: 2px solid rgba(52, 211, 153, 0.2); }
-}
 
-.slab-face.right {
-  left: 100%; top: 0; width: 20px; height: 100%;
-  transform-origin: left; transform: rotateY(90deg);
-  animation: fadeRightFace 5s ease forwards;
-}
-@keyframes fadeRightFace {
-  0%, 25% { background-color: transparent; }
-  35%, 100% { background-color: #021a14; }
-}
 
 /* === STAGE 3: TRUE 3D GOALS (Detailing) === */
 .true-goal {
@@ -1209,7 +1146,7 @@ body {
   top: 35%; height: 30%; width: 6%;
   transform-style: preserve-3d;
   transform: translateZ(10px);
-  animation: vanishGoal 5s ease forwards;
+  animation: vanishGoal 9s ease forwards;
 }
 
 @keyframes vanishGoal {
@@ -1234,16 +1171,16 @@ body {
   width: 4px; height: 100%;
   transform-style: preserve-3d;
   transform: translateZ(10vh);
-  animation: revealCrossbar 5s ease forwards;
+  animation: revealCrossbar 9s ease forwards;
 }
 
 .post-face { position: absolute; background: #f8fafc; box-shadow: 0 0 5px rgba(255,255,255,0.3); }
 
 /* Extrude up animation for posts */
-.post .post-face.front { width: 4px; height: 10vh; transform-origin: bottom; animation: growPost 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-.post .post-face.back { width: 4px; height: 10vh; transform-origin: bottom; animation: growPostBack 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-.post .post-face.left { width: 4px; height: 10vh; transform-origin: bottom; animation: growPostLeft 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-.post .post-face.right { width: 4px; height: 10vh; transform-origin: bottom; animation: growPostRight 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.post .post-face.front { width: 4px; height: 10vh; transform-origin: bottom; animation: growPost 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.post .post-face.back { width: 4px; height: 10vh; transform-origin: bottom; animation: growPostBack 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.post .post-face.left { width: 4px; height: 10vh; transform-origin: bottom; animation: growPostLeft 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.post .post-face.right { width: 4px; height: 10vh; transform-origin: bottom; animation: growPostRight 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
 
 .crossbar .post-face.front { width: 4px; height: 100%; transform: translateZ(2px); }
 .crossbar .post-face.back { width: 4px; height: 100%; transform: rotateY(180deg) translateZ(2px); }
@@ -1258,7 +1195,7 @@ body {
   background: linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.4) 75%), linear-gradient(-45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.4) 75%);
   background-size: 8px 8px;
   transform: rotateY(-50deg);
-  animation: revealCrossbar 5s ease forwards;
+  animation: revealCrossbar 9s ease forwards;
 }
 
 /* 45% (4.5s) is when detailing starts */
@@ -1306,17 +1243,17 @@ body {
 .corner-flag.top-left { top: 0; left: 0; }
 .corner-flag.top-right { top: 0; right: 0; }
 
-.corner-flag.bottom-left .pole { animation: popFlagPole 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0s; }
-.corner-flag.bottom-left .flag-cloth { animation: popFlagCloth 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0s; }
+.corner-flag.bottom-left .pole { animation: popFlagPole 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0s; }
+.corner-flag.bottom-left .flag-cloth { animation: popFlagCloth 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0s; }
 
-.corner-flag.bottom-right .pole { animation: popFlagPole 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.2s; }
-.corner-flag.bottom-right .flag-cloth { animation: popFlagCloth 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.2s; }
+.corner-flag.bottom-right .pole { animation: popFlagPole 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.2s; }
+.corner-flag.bottom-right .flag-cloth { animation: popFlagCloth 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.2s; }
 
-.corner-flag.top-left .pole { animation: popFlagPole 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.4s; }
-.corner-flag.top-left .flag-cloth { animation: popFlagCloth 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.4s; }
+.corner-flag.top-left .pole { animation: popFlagPole 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.4s; }
+.corner-flag.top-left .flag-cloth { animation: popFlagCloth 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.4s; }
 
-.corner-flag.top-right .pole { animation: popFlagPole 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.6s; }
-.corner-flag.top-right .flag-cloth { animation: popFlagCloth 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.6s; }
+.corner-flag.top-right .pole { animation: popFlagPole 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.6s; }
+.corner-flag.top-right .flag-cloth { animation: popFlagCloth 9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.6s; }
 
 @keyframes popFlagPole {
   0%, 45% { transform: rotateX(-90deg) scaleY(0); }
@@ -1336,7 +1273,7 @@ body {
   text-align: center;
   z-index: 100;
   opacity: 0;
-  animation: dropzoneReveal 5s ease forwards;
+  animation: dropzoneReveal 9s ease forwards;
 }
 
 .minimal-title {
@@ -1365,21 +1302,21 @@ body {
   z-index: 60;
   opacity: 0;
   pointer-events: none;
-  animation: dropzoneReveal 5s ease forwards;
+  animation: dropzoneReveal 9s ease forwards;
 }
 
 @keyframes dropzoneReveal {
-  0%, 90% { opacity: 0; visibility: hidden; filter: blur(10px); }
-  95%, 100% { opacity: 1; visibility: visible; filter: blur(0); }
+  0%, 95% { opacity: 0; visibility: hidden; }
+  98%, 100% { opacity: 1; visibility: visible; }
 }
 
 .pitch-container {
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
 }
-.pitch-container:hover .slab-face.top {
+.pitch-container:hover {
   border-color: rgba(0, 255, 135, 0.8) !important;
 }
-.pitch-container.drag-active .slab-face.top {
+.pitch-container.drag-active {
   border-color: rgba(0, 255, 135, 1) !important;
   background-color: rgba(0, 255, 135, 0.1) !important;
 }
@@ -1396,7 +1333,7 @@ body {
   z-index: 50;
   pointer-events: none;
   opacity: 0;
-  animation: fadePitchText 5s ease forwards;
+  animation: fadePitchText 9s ease forwards;
 }
 
 .pitch-center-text span {
@@ -1412,8 +1349,8 @@ body {
 .pitch-center-text span:first-child { color: rgba(0, 255, 135, 0.9); }
 
 @keyframes fadePitchText {
-  0%, 60% { opacity: 0; filter: blur(10px); }
-  65%, 85% { opacity: 1; filter: blur(0); }
-  90%, 100% { opacity: 0; filter: blur(10px); }
+  0%, 60% { opacity: 0; }
+  65%, 92% { opacity: 1; }
+  96%, 100% { opacity: 0; }
 }
 
