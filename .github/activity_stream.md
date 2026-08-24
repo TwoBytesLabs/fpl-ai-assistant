@@ -635,3 +635,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-23 17:44:37 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-08-24 10:04:48 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-08-24 13:04:34 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2026-08-24 20:01:14 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
