@@ -487,16 +487,37 @@ function MinimalLanding({ image, setImage, transfers, setTransfers, fileInputRef
             <span style={{ fontSize: '0.9rem', color: '#a3a3a3' }}>or click to browse</span>
           </div>
           <svg viewBox="0 0 800 500" className="blueprint-svg" preserveAspectRatio="none">
+            {/* Outer Boundary */}
             <rect x="0" y="0" width="800" height="500" />
+            {/* Halfway Line */}
             <line x1="400" y1="0" x2="400" y2="500" />
+            {/* Center Circle */}
             <circle cx="400" cy="250" r="75" />
             <circle cx="400" cy="250" r="3" fill="currentColor" />
+            
+            {/* Left Penalty Area */}
             <rect x="0" y="109" width="132" height="282" />
+            {/* Left Goal Area */}
             <rect x="0" y="183.5" width="44" height="133" />
-            <path d="M 132 205.5 A 75 75 0 0 1 132 294.5" />
+            {/* Left Penalty Spot */}
+            <circle cx="88" cy="250" r="3" fill="currentColor" />
+            {/* Left Penalty Arc (D) */}
+            <path d="M 132 195 A 73 73 0 0 1 132 305" />
+            
+            {/* Right Penalty Area */}
             <rect x="668" y="109" width="132" height="282" />
+            {/* Right Goal Area */}
             <rect x="756" y="183.5" width="44" height="133" />
-            <path d="M 668 205.5 A 75 75 0 0 0 668 294.5" />
+            {/* Right Penalty Spot */}
+            <circle cx="712" cy="250" r="3" fill="currentColor" />
+            {/* Right Penalty Arc (D) */}
+            <path d="M 668 195 A 73 73 0 0 0 668 305" />
+
+            {/* Corner Arcs */}
+            <path d="M 0 15 A 15 15 0 0 0 15 0" />
+            <path d="M 785 0 A 15 15 0 0 0 800 15" />
+            <path d="M 800 485 A 15 15 0 0 0 785 500" />
+            <path d="M 15 500 A 15 15 0 0 0 0 485" />
           </svg>
 
           {/* Solid 3D Pitch Slab (Stage 2) */}

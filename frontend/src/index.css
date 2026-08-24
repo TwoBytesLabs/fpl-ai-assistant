@@ -1105,11 +1105,12 @@ body {
 }
 
 .blueprint-svg path, .blueprint-svg rect, .blueprint-svg line, .blueprint-svg circle {
-  stroke: rgba(52, 211, 153, 0.9);
+  stroke: #ffffff;
   stroke-width: 3;
   fill: none;
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.8)) drop-shadow(0 0 10px rgba(52,211,153,0.8));
   animation: drawBlueprint 5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
@@ -1141,15 +1142,19 @@ body {
 @keyframes fadeTopFace {
   0%, 25% { background-color: transparent; box-shadow: none; background-image: none; border: 1px solid transparent; }
   35%, 90% { 
-    background-color: #022c22;
-    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 10%, rgba(16, 185, 129, 0.05) 10%, rgba(16, 185, 129, 0.05) 20%);
+    background-color: #2b5d34;
+    background-image: 
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 10%, transparent 10%, transparent 20%),
+      radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
     border: 1px solid transparent;
   }
   95%, 100% { 
-    background-color: #022c22;
-    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 10%, rgba(16, 185, 129, 0.05) 10%, rgba(16, 185, 129, 0.05) 20%);
-    border: 2px dashed rgba(0, 255, 135, 0.4);
-    box-shadow: inset 0 0 50px rgba(0, 255, 135, 0.05);
+    background-color: #2b5d34;
+    background-image: 
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 10%, transparent 10%, transparent 20%),
+      radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.4);
   }
 }
 
