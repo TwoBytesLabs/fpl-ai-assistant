@@ -101,16 +101,26 @@ function PlayerRadarChart({ player, transfers }) {
     </div>
   );
 
-  const baseVal = parseFloat(player.ep_next) || 3.0;
-  // Seed a deterministic pseudo-random visual based on player ID and points
-  const pId = player.id || 1;
+  const priceScore = ((player.price || 5.0) / 15.0) * 100; // Normalize price (e.g. Haaland 15.0m = 100)
   
+  // Real stats normalized to 0-100 based on typical FPL maximums
+  const realXG = Math.min(100, ((player.stat_xg || 0) / 0.9) * 100);
+  const realXA = Math.min(100, ((player.stat_xa || 0) / 0.5) * 100);
+  const realXGI = Math.min(100, ((player.stat_xgi || 0) / 1.3) * 100);
+  const realForm = Math.min(100, ((player.stat_form || 0) / 8.0) * 100);
+  const realThreat = Math.min(100, ((player.stat_threat || 0) / 1500.0) * 100);
+
+  // If real stats are tiny/zero (e.g., pre-season), fallback to their price/ep_next heuristics so the chart is huge for premiums!
+  const hasRealData = (player.stat_xg > 0.1 || player.stat_form > 0.5 || player.stat_threat > 100);
+  const pId = player.id || 1;
+  const baseVal = parseFloat(player.ep_next) || 3.0;
+
   const stats = [
-    { label: 'xG', value: Math.min(100, Math.max(10, baseVal * 12 + (pId % 5) * 5)) },
-    { label: 'xA', value: Math.min(100, Math.max(10, baseVal * 10 + (pId % 7) * 4)) },
-    { label: 'xGI', value: Math.min(100, Math.max(10, baseVal * 15 + (pId % 3) * 6)) },
-    { label: 'Form', value: Math.min(100, Math.max(10, baseVal * 14 + (pId % 4) * 3)) },
-    { label: 'Threat', value: Math.min(100, Math.max(10, baseVal * 16 + (pId % 6) * 4)) },
+    { label: 'xG', value: hasRealData ? Math.max(15, realXG) : Math.min(100, Math.max(15, priceScore * 0.9 + (pId % 5) * 3)) },
+    { label: 'xA', value: hasRealData ? Math.max(15, realXA) : Math.min(100, Math.max(15, priceScore * 0.6 + (pId % 7) * 4)) },
+    { label: 'xGI', value: hasRealData ? Math.max(15, realXGI) : Math.min(100, Math.max(15, priceScore * 1.0)) },
+    { label: 'Form', value: hasRealData ? Math.max(15, realForm) : Math.min(100, Math.max(15, baseVal * 15 + (pId % 4) * 3)) },
+    { label: 'Threat', value: hasRealData ? Math.max(15, realThreat) : Math.min(100, Math.max(15, priceScore * 0.85 + (pId % 6) * 4)) },
   ];
 
   const size = 240;
@@ -449,74 +459,80 @@ function BudgetHeatmap({ team }) {
 function MinimalLanding({ image, setImage, transfers, setTransfers, fileInputRef, handleDrop, processImage, error }) {
   return (
     <div className="minimal-landing-fullpage">
-      <div className="football-scene">
-        <div className="pitch-lines">
-          <div className="center-circle"></div>
-          <div className="center-dot"></div>
-          <div className="halfway-line"></div>
-          <div className="penalty-box left-box"></div>
-          <div className="penalty-box right-box"></div>
-          <div className="goal-box left-goal"></div>
-          <div className="goal-box right-goal"></div>
-        </div>
-        <div className="floating-ball ball-1">
-          <div className="ball-inner">
-            <div className="pentagon"></div>
-            <div className="pentagon p2"></div>
-            <div className="pentagon p3"></div>
-          </div>
-        </div>
-        <div className="floating-ball ball-2">
-          <div className="ball-inner">
-            <div className="pentagon"></div>
-            <div className="pentagon p2"></div>
-            <div className="pentagon p3"></div>
-          </div>
-        </div>
-        <div className="data-particles">
-          <div className="particle p1"></div>
-          <div className="particle p2"></div>
-          <div className="particle p3"></div>
-          <div className="particle p4"></div>
-          <div className="particle p5"></div>
-          <div className="particle p6"></div>
-          <div className="particle p7"></div>
-          <div className="particle p8"></div>
-          <div className="particle p9"></div>
-          <div className="particle p10"></div>
-          <div className="particle p11"></div>
-          <div className="particle p12"></div>
-        </div>
-        <div className="stat-float s1">xG 0.87</div>
-        <div className="stat-float s2">Form ▲</div>
-        <div className="stat-float s3">£12.5m</div>
-        <div className="stat-float s4">GW1</div>
-      </div>
-      <div className="minimal-content-wrapper">
+      <div className="title-section">
         <h1 className="minimal-title">FPL AI Assistant</h1>
         <p className="minimal-subtitle">Deterministic squad analysis powered by computer vision.</p>
-        
+      </div>
+      <div className="football-scene">
         <div 
-          className={`minimal-dropzone ${image ? "has-image" : ""}`}
-          onDragOver={(e) => e.preventDefault()}
+          className="pitch-container" 
+          style={{ cursor: 'pointer' }}
+          onClick={() => fileInputRef.current && fileInputRef.current.click()}
           onDrop={handleDrop}
-          onClick={() => fileInputRef.current.click()}
+          onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
         >
-          {image ? (
-            <div className="minimal-file-selected">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"></path></svg>
-              <span>{image.name}</span>
-            </div>
-          ) : (
-            <div className="minimal-drop-content">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-              <p>Drag & drop your pitch screenshot</p>
-              <span className="minimal-hint">or click to browse</span>
-            </div>
-          )}
-          <input type="file" ref={fileInputRef} onChange={(e) => setImage(e.target.files[0])} hidden accept="image/png, image/jpeg, image/webp"/>
-        </div>
+          
+          {/* Blueprint SVG (Stage 1) */}
+          <div className="pitch-center-text">
+            <span>Integrated with Patel AI</span>
+            <span>Made by Hriday Patel</span>
+          </div>
+          <div className="pitch-drop-text">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '1rem', color: 'rgba(0, 255, 135, 0.8)' }}>
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <p style={{ fontSize: '1.2rem', color: '#fff', marginBottom: '0.5rem', fontWeight: 600 }}>Drag & drop your pitch screenshot</p>
+            <span style={{ fontSize: '0.9rem', color: '#a3a3a3' }}>or click to browse</span>
+          </div>
+          <svg viewBox="0 0 800 500" className="blueprint-svg" preserveAspectRatio="none">
+            <rect x="0" y="0" width="800" height="500" />
+            <line x1="400" y1="0" x2="400" y2="500" />
+            <circle cx="400" cy="250" r="75" />
+            <circle cx="400" cy="250" r="3" fill="currentColor" />
+            <rect x="0" y="109" width="132" height="282" />
+            <rect x="0" y="183.5" width="44" height="133" />
+            <path d="M 132 205.5 A 75 75 0 0 1 132 294.5" />
+            <rect x="668" y="109" width="132" height="282" />
+            <rect x="756" y="183.5" width="44" height="133" />
+            <path d="M 668 205.5 A 75 75 0 0 0 668 294.5" />
+          </svg>
 
+          {/* Solid 3D Pitch Slab (Stage 2) */}
+          <div className="pitch-slab">
+            <div className="slab-face top"></div>
+            <div className="slab-face bottom"></div>
+            <div className="slab-face front"></div>
+            <div className="slab-face back"></div>
+            <div className="slab-face left"></div>
+            <div className="slab-face right"></div>
+            
+            {/* 3D Goals (Stage 3) */}
+            <div className="true-goal left-goal">
+              <div className="post post-1"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
+              <div className="post post-2"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
+              <div className="crossbar"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
+              
+            </div>
+            
+            <div className="true-goal right-goal">
+              <div className="post post-1"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
+              <div className="post post-2"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
+              <div className="crossbar"><div className="post-face front"></div><div className="post-face back"></div><div className="post-face left"></div><div className="post-face right"></div></div>
+              
+            </div>
+
+            {/* Corner Flags (Stage 3) */}
+            <div className="corner-flags-3d">
+              <div className="corner-flag bottom-left"><div className="pole"></div><div className="flag-cloth"></div></div>
+              <div className="corner-flag bottom-right"><div className="pole"></div><div className="flag-cloth"></div></div>
+              <div className="corner-flag top-left"><div className="pole"></div><div className="flag-cloth"></div></div>
+              <div className="corner-flag top-right"><div className="pole"></div><div className="flag-cloth"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
         {image && (
           <div className="minimal-actions">
             <div className="minimal-select-wrapper">
@@ -536,7 +552,6 @@ function MinimalLanding({ image, setImage, transfers, setTransfers, fileInputRef
         )}
         {error && <div className="minimal-error">{error}</div>}
       </div>
-    </div>
   );
 }
 
@@ -550,8 +565,12 @@ function App() {
   const [selectedPlayer, setSelectedPlayer] = useState(null)
   const fileInputRef = useRef(null)
 
+  const getApiBaseUrl = () => {
+    return `http://${window.location.hostname}:3001`;
+  }
+
   useEffect(() => {
-    fetch('http://localhost:3001/api/metadata')
+    fetch(`${getApiBaseUrl()}/api/metadata`)
       .then(r => r.json())
       .then(d => setMetadata(d))
       .catch(console.error)
@@ -575,7 +594,7 @@ function App() {
       formData.append('transfers', transfers)
       formData.append('bank_balance', 0.0) // Legacy field, backend will auto-calculate
       
-      const res = await fetch('http://localhost:3001/api/process-team', {
+      const res = await fetch(`${getApiBaseUrl()}/api/process-team`, {
         method: 'POST',
         body: formData
       })
@@ -605,7 +624,7 @@ function App() {
     if (reqId && jobData?.status !== 'complete' && jobData?.status !== 'failed') {
       interval = setInterval(async () => {
         try {
-          const res = await fetch(`http://localhost:3001/api/process-team/${reqId}`)
+          const res = await fetch(`${getApiBaseUrl()}/api/process-team/${reqId}`)
           if (!res.ok) {
             clearInterval(interval)
             setError("Analysis failed or session expired.")
@@ -738,7 +757,7 @@ function App() {
                       <span style={{ fontSize: '0.65rem', padding: '2px 4px', background: 'var(--border)', borderRadius: '3px', width: '30px', textAlign: 'center', color: p.is_new ? 'var(--bg-color)' : 'inherit', backgroundColor: p.is_new ? 'var(--success)' : 'var(--border)' }}>
                         {p.position_id === 1 ? 'GK' : p.position_id === 2 ? 'DEF' : p.position_id === 3 ? 'MID' : 'FWD'}
                       </span>
-                      {p.name} {p.is_new && <span style={{fontWeight: 'bold'}}>(NEW)</span>}
+                      {p.name} {p.is_new && <span style={{fontWeight: 'bold', color: 'var(--success)'}}>(IN)</span>}
                     </span>
                     <span>{p.ep_next} Proj. GW pts</span>
                   </div>

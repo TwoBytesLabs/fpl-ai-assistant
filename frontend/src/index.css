@@ -1048,408 +1048,367 @@ body {
   perspective: 2000px;
 }
 
-/* === FOOTBALL PITCH LINES (birds-eye tactical view) === */
+/* === PREFERS REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  .football-scene, .pitch-container, .blueprint-svg path, .blueprint-svg rect, .blueprint-svg line, .blueprint-svg circle, .pitch-slab, .true-goal .post, .true-goal .crossbar, .true-goal .net-back, .corner-flag, .minimal-content-wrapper {
+    animation: none !important;
+    transition: none !important;
+  }
+  .football-scene { visibility: hidden !important; opacity: 0 !important; display: none !important; }
+  .minimal-content-wrapper { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, -50%) scale(1) !important; filter: none !important; animation: none !important; }
+}
+
+/* === MAIN SCENE & CAMERA === */
 .football-scene {
+  perspective: 1200px;
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  z-index: 10;
+  /* Instead of opacity fading the parent, we let it vanish instantly at the end */
+  
 }
 
-.pitch-lines {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 80vw; height: 50vh;
-  transform: translate(-50%, -50%) perspective(800px) rotateX(55deg);
-  border: 1px solid rgba(0, 255, 135, 0.08);
-  animation: pitchFadeIn 2s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes pitchFadeIn {
-  0% { opacity: 0; transform: translate(-50%, -50%) perspective(800px) rotateX(70deg) scale(0.8); }
-  100% { opacity: 1; transform: translate(-50%, -50%) perspective(800px) rotateX(55deg) scale(1); }
-}
-
-.center-circle {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 14vh; height: 14vh;
-  border: 1px solid rgba(0, 255, 135, 0.1);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.center-dot {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 6px; height: 6px;
-  background: rgba(0, 255, 135, 0.3);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 15px rgba(0, 255, 135, 0.5);
-}
-
-.halfway-line {
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: rgba(0, 255, 135, 0.08);
-}
-
-.penalty-box {
-  position: absolute;
-  top: 20%; height: 60%;
-  width: 12%;
-  border: 1px solid rgba(0, 255, 135, 0.06);
-}
-.penalty-box.left-box { left: 0; border-left: none; }
-.penalty-box.right-box { right: 0; border-right: none; }
-
-.goal-box {
-  position: absolute;
-  top: 35%; height: 30%;
-  width: 5%;
-  border: 1px solid rgba(0, 255, 135, 0.05);
-}
-.goal-box.left-goal { left: 0; border-left: none; }
-.goal-box.right-goal { right: 0; border-right: none; }
-
-/* === 3D FLOATING FOOTBALL === */
-.floating-ball {
-  position: absolute;
-  width: 120px; height: 120px;
-  transform-style: preserve-3d;
-  z-index: 1;
-}
-
-.floating-ball.ball-1 {
-  top: 12%; right: 10%;
-  animation: floatBall1 12s ease-in-out infinite alternate;
-}
-
-.floating-ball.ball-2 {
-  bottom: 18%; left: 8%;
-  animation: floatBall2 15s ease-in-out infinite alternate;
-  width: 80px; height: 80px;
-  opacity: 0.5;
-}
-
-@keyframes floatBall1 {
-  0% { transform: translateY(0) rotateX(0) rotateY(0) rotateZ(0); }
-  100% { transform: translateY(-40px) rotateX(360deg) rotateY(180deg) rotateZ(90deg); }
-}
-
-@keyframes floatBall2 {
-  0% { transform: translateY(0) rotateX(0) rotateY(0); }
-  100% { transform: translateY(30px) rotateX(-360deg) rotateY(360deg); }
-}
-
-.ball-inner {
-  width: 100%; height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #1a1a1a 0%, #0a0a0a 70%, #000 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    inset -8px -8px 20px rgba(0, 0, 0, 0.8),
-    inset 4px 4px 15px rgba(255, 255, 255, 0.03),
-    0 20px 60px rgba(0, 0, 0, 0.8),
-    0 0 30px rgba(0, 255, 135, 0.05);
+.pitch-container {
   position: relative;
-  overflow: hidden;
+  width: 75vw; max-width: 800px;
+  height: 45vh; max-height: 500px;
+  transform-style: preserve-3d;
+  /* NO OPACITY ANIMATION HERE, EVER. IT FLATTENS 3D. */
+  animation: cameraMove 5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes cameraMove {
+  0%, 5% { transform: rotateX(55deg) rotateZ(-10deg) scale(0.8) translateZ(-400px); }
+  25%, 70% { transform: rotateX(55deg) rotateZ(-10deg) scale(1) translateZ(0); }
+  85%, 100% { transform: rotateX(0deg) rotateZ(0deg) scale(0.95) translateZ(0); }
+}
+
+/* === STAGE 1: BLUEPRINT SKETCH === */
+.blueprint-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  transform: translateZ(1px);
+  z-index: 2;
+  /* Opacity here is fine because it's a 2D child that doesn't have 3D children! */
+  animation: fadeBlueprint 5s ease forwards;
+}
+
+@keyframes fadeBlueprint {
+  0%, 40% { opacity: 1; }
+  45%, 55% { opacity: 0.15; }
+  60%, 100% { opacity: 0; display: none; }
+}
+
+.blueprint-svg path, .blueprint-svg rect, .blueprint-svg line, .blueprint-svg circle {
+  stroke: rgba(52, 211, 153, 0.9);
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: drawBlueprint 5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes drawBlueprint {
+  0%, 5% { stroke-dashoffset: 3000; opacity: 1; }
+  25%, 35% { stroke-dashoffset: 0; opacity: 1; }
+  45%, 55% { stroke-dashoffset: 0; opacity: 0.3; }
+  60%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes riseSlab {
+  0%, 25% { transform: translateZ(-10px) scaleZ(0); visibility: hidden; }
+  26% { transform: translateZ(-10px) scaleZ(0); visibility: visible; }
+  35%, 100% { transform: translateZ(0) scaleZ(1); visibility: visible; }
+}
+
+.slab-face {
+  position: absolute;
+  backface-visibility: visible;
   transform-style: preserve-3d;
 }
 
-.pentagon {
-  position: absolute;
-  width: 30%; height: 30%;
-  background: rgba(0, 255, 135, 0.04);
-  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-  border: 1px solid rgba(0, 255, 135, 0.1);
+/* Base transparent state for colors so we can fade them */
+.slab-face.top {
+  inset: 0;
+  transform: translateZ(10px);
+  animation: fadeTopFace 5s ease forwards;
 }
-.pentagon { top: 15%; left: 35%; }
-.pentagon.p2 { top: 55%; left: 10%; transform: rotate(35deg); }
-.pentagon.p3 { top: 50%; right: 8%; transform: rotate(-20deg); }
-
-/* === FLOATING DATA PARTICLES === */
-.data-particles {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none;
+@keyframes fadeTopFace {
+  0%, 25% { background-color: transparent; box-shadow: none; background-image: none; border: 1px solid transparent; }
+  35%, 90% { 
+    background-color: #022c22;
+    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 10%, rgba(16, 185, 129, 0.05) 10%, rgba(16, 185, 129, 0.05) 20%);
+    border: 1px solid transparent;
+  }
+  95%, 100% { 
+    background-color: #022c22;
+    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 10%, rgba(16, 185, 129, 0.05) 10%, rgba(16, 185, 129, 0.05) 20%);
+    border: 2px dashed rgba(0, 255, 135, 0.4);
+    box-shadow: inset 0 0 50px rgba(0, 255, 135, 0.05);
+  }
 }
 
-.particle {
+@keyframes fadeBottomFace {
+  0%, 25% { background-color: transparent; box-shadow: none; }
+  35%, 100% { background-color: #011410; box-shadow: 0 20px 50px rgba(0,0,0,0.9); }
+}
+
+.slab-face.front {
+  top: 100%; left: 0; width: 100%; height: 20px;
+  transform-origin: top; transform: rotateX(-90deg);
+  animation: fadeFrontFace 5s ease forwards;
+}
+@keyframes fadeFrontFace {
+  0%, 25% { background-color: transparent; border-bottom: none; }
+  35%, 100% { background-color: #022019; border-bottom: 2px solid rgba(52, 211, 153, 0.4); }
+}
+
+.slab-face.back {
+  bottom: 100%; left: 0; width: 100%; height: 20px;
+  transform-origin: bottom; transform: rotateX(90deg);
+  animation: fadeBackFace 5s ease forwards;
+}
+@keyframes fadeBackFace {
+  0%, 25% { background-color: transparent; }
+  35%, 100% { background-color: #011410; }
+}
+
+.slab-face.left {
+  right: 100%; top: 0; width: 20px; height: 100%;
+  transform-origin: right; transform: rotateY(-90deg);
+  animation: fadeLeftFace 5s ease forwards;
+}
+@keyframes fadeLeftFace {
+  0%, 25% { background-color: transparent; border-left: none; }
+  35%, 100% { background-color: #02251c; border-left: 2px solid rgba(52, 211, 153, 0.2); }
+}
+
+.slab-face.right {
+  left: 100%; top: 0; width: 20px; height: 100%;
+  transform-origin: left; transform: rotateY(90deg);
+  animation: fadeRightFace 5s ease forwards;
+}
+@keyframes fadeRightFace {
+  0%, 25% { background-color: transparent; }
+  35%, 100% { background-color: #021a14; }
+}
+
+/* === STAGE 3: TRUE 3D GOALS (Detailing) === */
+.true-goal {
+  position: absolute;
+  top: 35%; height: 30%; width: 6%;
+  transform-style: preserve-3d;
+  transform: translateZ(10px);
+  animation: vanishGoal 5s ease forwards;
+}
+
+@keyframes vanishGoal {
+  0%, 55% { opacity: 1; visibility: visible; }
+  60%, 100% { opacity: 0; visibility: hidden; }
+}
+.true-goal.left-goal { left: 0; }
+.true-goal.right-goal { right: 0; transform: rotateZ(180deg); }
+
+.true-goal .post {
+  position: absolute;
+  width: 4px; height: 4px;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+}
+.true-goal .post-1 { left: 0; top: 0; }
+.true-goal .post-2 { left: 0; bottom: 0; }
+
+.true-goal .crossbar {
+  position: absolute;
+  left: 0; top: 0;
+  width: 4px; height: 100%;
+  transform-style: preserve-3d;
+  transform: translateZ(10vh);
+  animation: revealCrossbar 5s ease forwards;
+}
+
+.post-face { position: absolute; background: #f8fafc; box-shadow: 0 0 5px rgba(255,255,255,0.3); }
+
+/* Extrude up animation for posts */
+.post .post-face.front { width: 4px; height: 10vh; transform-origin: bottom; animation: growPost 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.post .post-face.back { width: 4px; height: 10vh; transform-origin: bottom; animation: growPostBack 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.post .post-face.left { width: 4px; height: 10vh; transform-origin: bottom; animation: growPostLeft 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.post .post-face.right { width: 4px; height: 10vh; transform-origin: bottom; animation: growPostRight 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+
+.crossbar .post-face.front { width: 4px; height: 100%; transform: translateZ(2px); }
+.crossbar .post-face.back { width: 4px; height: 100%; transform: rotateY(180deg) translateZ(2px); }
+.crossbar .post-face.left { width: 4px; height: 100%; transform: rotateY(-90deg) translateZ(2px); }
+.crossbar .post-face.right { width: 4px; height: 100%; transform: rotateY(90deg) translateZ(2px); }
+
+.true-goal .net-back {
+  position: absolute;
+  left: 2px; top: 0;
+  width: 12vh; height: 100%;
+  transform-origin: left center;
+  background: linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.4) 75%), linear-gradient(-45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.4) 75%);
+  background-size: 8px 8px;
+  transform: rotateY(-50deg);
+  animation: revealCrossbar 5s ease forwards;
+}
+
+/* 45% (4.5s) is when detailing starts */
+@keyframes growPost { 0%, 45% { transform: rotateX(-90deg) translateZ(2px) scaleY(0); } 55%, 100% { transform: rotateX(-90deg) translateZ(2px) scaleY(1); } }
+@keyframes growPostBack { 0%, 45% { transform: rotateX(-90deg) rotateY(180deg) translateZ(2px) scaleY(0); } 55%, 100% { transform: rotateX(-90deg) rotateY(180deg) translateZ(2px) scaleY(1); } }
+@keyframes growPostLeft { 0%, 45% { transform: rotateX(-90deg) rotateY(-90deg) translateZ(2px) scaleY(0); } 55%, 100% { transform: rotateX(-90deg) rotateY(-90deg) translateZ(2px) scaleY(1); } }
+@keyframes growPostRight { 0%, 45% { transform: rotateX(-90deg) rotateY(90deg) translateZ(2px) scaleY(0); } 55%, 100% { transform: rotateX(-90deg) rotateY(90deg) translateZ(2px) scaleY(1); } }
+
+@keyframes revealCrossbar {
+  0%, 50% { visibility: hidden; }
+  51%, 100% { visibility: visible; }
+}
+
+/* === STAGE 3: STAGGERED CORNER FLAGS === */
+.corner-flags-3d {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: translateZ(10px);
+}
+.corner-flag {
   position: absolute;
   width: 3px; height: 3px;
-  background: rgba(0, 255, 135, 0.4);
-  border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0, 255, 135, 0.3);
-}
-
-.particle.p1 { top: 20%; left: 15%; animation: drift 8s ease-in-out infinite alternate; }
-.particle.p2 { top: 40%; left: 80%; animation: drift 11s ease-in-out infinite alternate-reverse; animation-delay: -2s; }
-.particle.p3 { top: 70%; left: 25%; animation: drift 9s ease-in-out infinite alternate; animation-delay: -4s; }
-.particle.p4 { top: 30%; left: 60%; animation: drift 13s ease-in-out infinite alternate-reverse; animation-delay: -1s; }
-.particle.p5 { top: 80%; left: 70%; animation: drift 10s ease-in-out infinite alternate; animation-delay: -3s; }
-.particle.p6 { top: 15%; left: 45%; animation: drift 12s ease-in-out infinite alternate-reverse; animation-delay: -5s; }
-.particle.p7 { top: 55%; left: 90%; animation: drift 7s ease-in-out infinite alternate; width: 2px; height: 2px; }
-.particle.p8 { top: 85%; left: 40%; animation: drift 14s ease-in-out infinite alternate-reverse; width: 2px; height: 2px; }
-.particle.p9 { top: 10%; left: 75%; animation: drift 9s ease-in-out infinite alternate; width: 4px; height: 4px; }
-.particle.p10 { top: 65%; left: 5%; animation: drift 11s ease-in-out infinite alternate; animation-delay: -6s; }
-.particle.p11 { top: 45%; left: 35%; animation: drift 8s ease-in-out infinite alternate-reverse; width: 2px; height: 2px; animation-delay: -2s; }
-.particle.p12 { top: 25%; left: 55%; animation: drift 15s ease-in-out infinite alternate; animation-delay: -7s; }
-
-@keyframes drift {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-  50% { opacity: 0.8; }
-  100% { transform: translate(40px, -60px) scale(1.5); opacity: 0.2; }
-}
-
-/* === FLOATING FPL STAT TAGS === */
-.stat-float {
-  position: absolute;
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: rgba(0, 255, 135, 0.25);
-  background: rgba(0, 255, 135, 0.03);
-  border: 1px solid rgba(0, 255, 135, 0.06);
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  backdrop-filter: blur(4px);
-  pointer-events: none;
-}
-
-.stat-float.s1 { top: 25%; left: 5%; animation: statDrift 10s ease-in-out infinite alternate; }
-.stat-float.s2 { top: 70%; right: 8%; animation: statDrift 13s ease-in-out infinite alternate-reverse; animation-delay: -3s; }
-.stat-float.s3 { bottom: 30%; left: 15%; animation: statDrift 11s ease-in-out infinite alternate; animation-delay: -5s; }
-.stat-float.s4 { top: 15%; right: 25%; animation: statDrift 9s ease-in-out infinite alternate-reverse; animation-delay: -2s; }
-
-@keyframes statDrift {
-  0% { transform: translateY(0) translateX(0); opacity: 0.3; }
-  50% { opacity: 0.6; }
-  100% { transform: translateY(-20px) translateX(15px); opacity: 0.2; }
-}
-
-/* === UI CONTENT WRAPPER === */
-.minimal-content-wrapper {
-  position: relative;
-  max-width: 900px;
-  width: 100%;
-  text-align: center;
-  z-index: 10;
   transform-style: preserve-3d;
-  animation: bootSequence 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.corner-flag .pole {
+  position: absolute;
+  width: 3px; height: 5vh;
+  background: #cbd5e1;
+  transform-origin: bottom center;
+  transform: rotateX(-90deg) scaleY(0);
+}
+.corner-flag .flag-cloth {
+  position: absolute;
+  top: 0; left: 0;
+  width: 3vh; height: 2vh;
+  background: #ef4444;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  transform-origin: left center;
+  transform: translateZ(5vh) rotateX(-90deg) rotateY(20deg) scale(0);
 }
 
-@keyframes bootSequence {
-  0% { opacity: 0; transform: translateY(150px) translateZ(-400px) rotateX(-20deg) scale(0.8); }
-  100% { opacity: 1; transform: translateY(0) translateZ(0) rotateX(0) scale(1); }
+.corner-flag.bottom-left { bottom: 0; left: 0; }
+.corner-flag.bottom-right { bottom: 0; right: 0; }
+.corner-flag.top-left { top: 0; left: 0; }
+.corner-flag.top-right { top: 0; right: 0; }
+
+.corner-flag.bottom-left .pole { animation: popFlagPole 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0s; }
+.corner-flag.bottom-left .flag-cloth { animation: popFlagCloth 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0s; }
+
+.corner-flag.bottom-right .pole { animation: popFlagPole 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.2s; }
+.corner-flag.bottom-right .flag-cloth { animation: popFlagCloth 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.2s; }
+
+.corner-flag.top-left .pole { animation: popFlagPole 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.4s; }
+.corner-flag.top-left .flag-cloth { animation: popFlagCloth 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.4s; }
+
+.corner-flag.top-right .pole { animation: popFlagPole 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.6s; }
+.corner-flag.top-right .flag-cloth { animation: popFlagCloth 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; animation-delay: 0.6s; }
+
+@keyframes popFlagPole {
+  0%, 45% { transform: rotateX(-90deg) scaleY(0); }
+  55%, 100% { transform: rotateX(-90deg) scaleY(1); }
+}
+@keyframes popFlagCloth {
+  0%, 50% { transform: translateZ(5vh) rotateX(-90deg) rotateY(20deg) scale(0); }
+  60%, 100% { transform: translateZ(5vh) rotateX(-90deg) rotateY(20deg) scale(1); }
+}
+
+/* === STAGE 5: UNFOLD DROPZONE === */
+
+.title-section {
+  position: absolute;
+  top: 15%; left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 100;
+  opacity: 0;
+  animation: dropzoneReveal 5s ease forwards;
 }
 
 .minimal-title {
-  font-size: 5rem;
-  font-weight: 900;
-  letter-spacing: -2px;
+  font-size: 2.2rem;
+  font-weight: 700;
   color: #ffffff;
   margin-bottom: 0.5rem;
-  transform: translateZ(80px);
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.8));
-  line-height: 1.1;
+  text-align: center;
 }
 
 .minimal-subtitle {
-  font-size: 1.2rem;
-  color: #666666;
-  margin-bottom: 4rem;
-  transform: translateZ(40px);
-  letter-spacing: 1px;
+  font-size: 1rem;
+  color: #a3a3a3;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-/* 3D Glassmorphism Dropzone */
-.minimal-dropzone {
-  position: relative;
-  background: rgba(10, 20, 10, 0.5);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  border: 1px solid rgba(0, 255, 135, 0.08);
-  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.9), inset 0 1px 0 rgba(255,255,255,0.03);
-  border-radius: 32px;
-  padding: 6rem 2rem;
-  cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+.pitch-drop-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) translateZ(15px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
+  text-align: center;
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  animation: dropzoneReveal 5s ease forwards;
 }
 
-.minimal-dropzone:hover {
-  transform: translateY(-20px) rotateX(5deg) translateZ(40px);
-  background: rgba(10, 20, 10, 0.7);
-  border-color: rgba(0, 255, 135, 0.2);
-  box-shadow: 0 60px 120px -20px rgba(0,0,0,1), 0 0 80px rgba(0, 255, 135, 0.05), inset 0 1px 0 rgba(255,255,255,0.05);
+@keyframes dropzoneReveal {
+  0%, 90% { opacity: 0; visibility: hidden; filter: blur(10px); }
+  95%, 100% { opacity: 1; visibility: visible; filter: blur(0); }
 }
 
-.minimal-dropzone.has-image {
-  border-color: rgba(0, 255, 135, 0.3);
-  box-shadow: 0 50px 100px -20px rgba(0,0,0,1), 0 0 60px rgba(0, 255, 135, 0.08);
-  transform: translateY(-10px) translateZ(20px);
-}
-
-.minimal-drop-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  color: #ffffff;
-  transform: translateZ(60px);
-  transition: transform 0.5s ease;
-}
-
-.minimal-dropzone:hover .minimal-drop-content {
-  transform: translateZ(100px) scale(1.05);
-}
-
-.minimal-drop-content svg {
-  width: 80px; height: 80px;
-  color: rgba(0, 255, 135, 0.6);
-  filter: drop-shadow(0 10px 20px rgba(0, 255, 135, 0.3));
-  animation: levitate 4s ease-in-out infinite alternate;
-}
-
-@keyframes levitate {
-  0% { transform: translateY(-10px) rotate(-2deg); }
-  100% { transform: translateY(10px) rotate(2deg); }
-}
-
-.minimal-drop-content p {
-  font-weight: 700;
-  font-size: 1.8rem;
-  margin: 0;
-  letter-spacing: -0.5px;
-  text-shadow: 0 10px 20px rgba(0,0,0,0.8);
-}
-
-.minimal-hint {
-  font-size: 1.1rem;
-  color: #666;
-  padding: 0.6rem 2rem;
-  background: rgba(0, 255, 135, 0.03);
-  border-radius: 50px;
-  border: 1px solid rgba(0, 255, 135, 0.05);
-}
-
-.minimal-file-selected {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: rgba(0, 255, 135, 0.8);
-  transform: translateZ(60px);
-}
-
-.minimal-file-selected svg {
-  color: rgba(0, 255, 135, 0.8);
-  filter: drop-shadow(0 10px 15px rgba(0, 255, 135, 0.4));
-}
-
-/* Actions */
-.minimal-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 3rem;
-  transform: translateZ(50px);
-}
-
-.minimal-select-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.4rem;
-}
-
-.minimal-select-wrapper label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: #666;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-.minimal-select-wrapper select {
-  background: rgba(0, 255, 135, 0.05);
-  border: 1px solid rgba(0, 255, 135, 0.15);
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 12px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.minimal-select-wrapper select:hover {
-  border-color: rgba(0, 255, 135, 0.4);
-  background: rgba(0, 255, 135, 0.08);
-}
-
-.minimal-btn {
-  background: rgba(0, 255, 135, 0.9);
-  color: #000;
-  border: none;
-  padding: 1rem 3rem;
-  border-radius: 12px;
-  font-weight: 800;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  height: auto;
-  align-self: flex-end;
-  box-shadow: 0 15px 30px rgba(0, 255, 135, 0.15);
-}
-
-.minimal-btn:hover {
-  transform: translateY(-5px) translateZ(20px) scale(1.05);
-  box-shadow: 0 25px 40px rgba(0, 255, 135, 0.25);
-  background: rgba(0, 255, 135, 1);
-}
-
-.minimal-btn-outline {
-  background: transparent;
-  color: #888;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  cursor: pointer;
+.pitch-container {
   transition: all 0.3s ease;
-  height: auto;
-  align-self: flex-end;
+}
+.pitch-container:hover .slab-face.top {
+  border-color: rgba(0, 255, 135, 0.8) !important;
+}
+.pitch-container.drag-active .slab-face.top {
+  border-color: rgba(0, 255, 135, 1) !important;
+  background-color: rgba(0, 255, 135, 0.1) !important;
 }
 
-.minimal-btn-outline:hover {
+
+.pitch-center-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) translateZ(15px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadePitchText 5s ease forwards;
+}
+
+.pitch-center-text span {
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #fff;
-  border-color: #fff;
-  transform: translateY(-2px);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+  margin: 0.2rem 0;
 }
 
-.minimal-error {
-  margin-top: 2rem;
-  color: #ef4444;
-  font-size: 1.1rem;
-  font-weight: bold;
-  background: rgba(239, 68, 68, 0.1);
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+.pitch-center-text span:first-child { color: rgba(0, 255, 135, 0.9); }
+
+@keyframes fadePitchText {
+  0%, 60% { opacity: 0; filter: blur(10px); }
+  65%, 85% { opacity: 1; filter: blur(0); }
+  90%, 100% { opacity: 0; filter: blur(10px); }
 }
+

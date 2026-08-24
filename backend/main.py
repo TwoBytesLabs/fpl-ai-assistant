@@ -14,6 +14,7 @@ from models import ProcessResponse, PrivacyStatus
 from services.ocr import ocr_service
 from services.analytics import get_best_transfers, format_player, calculate_budget_metrics, get_global_injuries, generate_ai_summary, generate_fpl_news
 from services.ml_engine import ml_engine
+from job_manager import job_manager
 
 app = FastAPI()
 
@@ -26,7 +27,7 @@ app.add_middleware(
 )
 
 # In-memory storage for jobs and FPL cache
-jobs = {}
+
 fpl_cache = {"data": None, "timestamp": 0}
 
 import urllib.request
@@ -70,7 +71,8 @@ def get_fpl_data():
     return fpl_cache["data"], fpl_cache.get("fixtures", [])
 
 def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: str, bank_balance: float):
-    job = jobs[request_id]
+    job = job_manager.get(request_id)
+    if not job: return
     temp_files = []
     
     try:
@@ -79,6 +81,7 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
         # Stage 2 & 3: Validating and OCR
         job.stage = "Reading player names"
         job.message = "Identifying players from your screenshot."
+        job_manager.save(job)
         ocr_start = time.time()
         
         # ── NEW: Spatial OCR extraction ──
@@ -98,6 +101,7 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
         # Stage 4: Matching with spatial row analysis
         job.stage = "Matching players with FPL data"
         job.message = "Analyzing pitch layout to detect formation and player positions."
+        job_manager.save(job)
         
         fpl_start = time.time()
         fpl_data, fpl_fixtures = get_fpl_data()
@@ -144,10 +148,12 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
         # Stage 6: Reconstructing squad — positions already set by spatial analysis
         job.stage = "Checking squad constraints"
         job.message = f"Formation detected: {formation}. Verifying squad rules."
+        job_manager.save(job)
                 
         # Stage 7 & 8: Recommendations
         job.stage = "Ranking transfer candidates"
         job.message = "Testing transfer options for your team."
+        job_manager.save(job)
         
         used_ids = set([p['id'] for p in starters + bench])
         sug_starters, sug_bench, t_cards = get_best_transfers(starters, bench, players, used_ids, transfers, strategy, bank_balance)
@@ -262,7 +268,16 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
         # Calculate new dashboard metrics
         job.budget = calculate_budget_metrics(starters + bench, bank_balance)
         job.global_injuries = get_global_injuries(fpl_data)
-        job.ai_summary = generate_ai_summary(t_cards, job.budget, job.global_injuries, starters + bench)
+        
+        # ── Gameweek Locking Notice ──
+        current_event = next((e for e in fpl_data.get('events', []) if e.get('is_current')), None)
+        next_event = next((e for e in fpl_data.get('events', []) if e.get('is_next')), None)
+        gw_warning = ""
+        if current_event and next_event:
+            gw_warning = f"⚠️ **Gameweek Locked:** {current_event['name']} is currently ongoing. Your transfers and the following recommendations are tailored for the upcoming {next_event['name']}.\n\n"
+            
+        base_summary = generate_ai_summary(t_cards, job.budget, job.global_injuries, starters + bench, transfers)
+        job.ai_summary = gw_warning + base_summary
         job.news = generate_fpl_news(fpl_data)
         
         age = time.time() - fpl_cache["timestamp"]
@@ -286,10 +301,12 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
         
         # Stage 10
         job.status = "complete"
+        job_manager.save(job)
         job.completed_at = datetime.utcnow().isoformat()
         
     except Exception as e:
         job.status = "failed"
+        job_manager.save(job)
         job.error = str(e)
         job.privacy = PrivacyStatus(input_persisted=False, temporary_files_deleted=True, deletion_status="cleanup_failed")
     finally:
@@ -315,7 +332,7 @@ async def upload_team(background_tasks: BackgroundTasks, squadImage: UploadFile 
         stage="Screenshot received",
         message="Your screenshot was received securely."
     )
-    jobs[request_id] = job
+    job_manager.save(job)
     
     # Process job in background
     background_tasks.add_task(process_job, request_id, contents, transfers, strategy, bank_balance)
@@ -324,9 +341,10 @@ async def upload_team(background_tasks: BackgroundTasks, squadImage: UploadFile 
 
 @app.get("/api/process-team/{request_id}", response_model=ProcessResponse)
 async def get_team_status(request_id: str):
-    if request_id not in jobs:
+    job = job_manager.get(request_id)
+    if not job:
         raise HTTPException(status_code=404, detail="NOT_FOUND")
-    return jobs[request_id]
+    return job
 
 @app.get("/api/metadata")
 async def get_metadata():

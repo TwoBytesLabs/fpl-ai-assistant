@@ -25,7 +25,9 @@ class FPLEngine:
         df['ict_num'] = pd.to_numeric(df.get('ict_index', 0), errors='coerce').fillna(0.0)
         df['ppg_num'] = pd.to_numeric(df.get('points_per_game', 0), errors='coerce').fillna(0.0)
         
-        target = (df['form_num'] * 0.6) + (df['ict_num'] / 10.0 * 0.3) + (df['ppg_num'] * 0.1)
+        # Penalize over-reliance on 1-2 gameweek 'form' blips
+        # Give more weight to established Points Per Game and underlying ICT stats
+        target = (df['form_num'] * 0.2) + (df['ict_num'] / 10.0 * 0.3) + (df['ppg_num'] * 0.5)
         
         X = self._extract_features(df)
         y = target

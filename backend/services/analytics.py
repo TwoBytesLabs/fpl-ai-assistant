@@ -184,7 +184,7 @@ def get_best_transfers(
                 in_player_name=best_replacement['web_name'],
                 current_price=best_out.get('now_cost', 50) / 10.0,
                 new_price=best_replacement.get('now_cost', 50) / 10.0,
-                projected_gain_1gw=round(best_score - current_score, 1),
+                projected_gain_1gw=ep_diff,
                 reasons=reasons
             )
             transfers.append(t_card)
@@ -237,7 +237,12 @@ def format_player(p: Dict, teams_map: Dict = None, teams_map_code: Dict = None, 
         is_new=p.get('is_new', False),
         is_captain=is_cap,
         is_vice_captain=is_vcap,
-        photo_url=photo_url
+        photo_url=photo_url,
+        stat_form=float(p.get('form', 0.0) or 0.0),
+        stat_threat=float(p.get('threat', 0.0) or 0.0),
+        stat_xg=float(p.get('expected_goals_per_90', 0.0) or 0.0),
+        stat_xa=float(p.get('expected_assists_per_90', 0.0) or 0.0),
+        stat_xgi=float(p.get('expected_goal_involvements_per_90', 0.0) or 0.0)
     )
 
 def calculate_budget_metrics(squad: List[Dict], in_the_bank: float) -> BudgetStatus:

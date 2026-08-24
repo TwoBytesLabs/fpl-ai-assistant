@@ -16,6 +16,11 @@ class PlayerSchema(BaseModel):
     is_captain: bool = False
     is_vice_captain: bool = False
     photo_url: str
+    stat_form: float = 0.0
+    stat_threat: float = 0.0
+    stat_xg: float = 0.0
+    stat_xa: float = 0.0
+    stat_xgi: float = 0.0
 
 class TransferCard(BaseModel):
     out_player_id: int
