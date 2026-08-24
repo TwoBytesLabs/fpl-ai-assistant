@@ -12,3 +12,20 @@ env/
 # OS files
 .DS_Store
 Thumbs.db
+
+# ML Models and OCR temp files
+*.traineddata
+*.onnx
+*.pt
+*.pth
+jobs_cache/
+*_cache.json
+
+# Environment variables
+.env.local
+.env.*
+
+# Temp files
+*.tmp
+*.temp
+test-out.png

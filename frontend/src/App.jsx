@@ -538,7 +538,7 @@ function App() {
   const fileInputRef = useRef(null)
 
   const getApiBaseUrl = () => {
-    return `http://${window.location.hostname}:3001`;
+    return import.meta.env.VITE_API_URL || `http://${window.location.hostname}:3001`;
   }
 
   useEffect(() => {

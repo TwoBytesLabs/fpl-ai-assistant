@@ -6,7 +6,12 @@ import time
 import asyncio
 from datetime import datetime
 from typing import Optional
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException, BackgroundTasks
+
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+
+from fastapi import FastAPI, Request, UploadFile, File, Form, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import requests
@@ -17,6 +22,16 @@ from services.ml_engine import ml_engine
 from job_manager import job_manager
 
 app = FastAPI()
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -518,7 +533,8 @@ async def get_xg_xa_stats():
     return sorted(stats, key=lambda x: float(x['xGI'] or 0), reverse=True)[:50]
 
 @app.get("/api/v2/ml/projections")
-async def get_ml_projections():
+@limiter.limit("10/minute")
+async def get_ml_projections(request: Request, ):
     fpl_data, _ = get_fpl_data()
     players = fpl_data.get('elements', [])
     predictions = ml_engine.predict(players)

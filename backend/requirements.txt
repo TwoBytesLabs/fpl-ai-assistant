@@ -8,3 +8,5 @@ rapidfuzz
 requests
 pandas
 scikit-learn
+
+slowapi==0.1.9
