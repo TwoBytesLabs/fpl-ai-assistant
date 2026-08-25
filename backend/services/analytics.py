@@ -307,7 +307,7 @@ def get_global_injuries(fpl_data: Dict) -> List[InjuryAlert]:
             team_name = teams_map.get(p.get('team'), 'UNK')
             
             player_code = p.get('code', '')
-            photo_url = f"https://resources.premierleague.com/premierleague/photos/players/250x250/p{player_code}.png"
+            photo_url = f"https://resources.premierleague.com/premierleague/photos/players/110x140/p{player_code}.png"
             
             alerts.append(InjuryAlert(
                 player_name=p.get('web_name', ''),

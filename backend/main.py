@@ -234,49 +234,46 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
             current_event = next((e for e in fpl_data['events'] if e.get('is_current')), None)
             next_event = next((e for e in fpl_data['events'] if e.get('is_next')), None)
             
-            # Prefer current (for live scores), fall back to next
-            target_event = current_event or next_event
+            # Return ALL fixtures, and let frontend handle pagination
+            gw_fixtures = fpl_fixtures
+            team_full = {t['id']: t for t in teams}
             
-            if target_event:
-                gw_id = target_event['id']
-                gw_fixtures = [f for f in fpl_fixtures if f.get('event') == gw_id]
-                team_full = {t['id']: t for t in teams}
+            for fix in gw_fixtures:
+                if not fix.get('event'): continue
                 
-                for fix in gw_fixtures:
-                    home_team = team_full.get(fix['team_h'], {})
-                    away_team = team_full.get(fix['team_a'], {})
-                    
-                    home_name = home_team.get('name', '?')
-                    away_name = away_team.get('name', '?')
-                    
-                    home_logo = f"https://resources.premierleague.com/premierleague/badges/t{home_team.get('code', '')}.png"
-                    away_logo = f"https://resources.premierleague.com/premierleague/badges/t{away_team.get('code', '')}.png"
-                    
-                    # Determine match status
-                    started = fix.get('started', False)
-                    finished = fix.get('finished', False) or fix.get('finished_provisional', False)
-                    
-                    if finished:
-                        status = 'FT'
-                    elif started:
-                        status = 'LIVE'
-                    else:
-                        status = 'upcoming'
-                    
-                    gameweek_fixtures.append({
-                        'home_team': home_name,
-                        'away_team': away_name,
-                        'home_logo': home_logo,
-                        'away_logo': away_logo,
-                        'home_score': fix.get('team_h_score'),
-                        'away_score': fix.get('team_a_score'),
-                        'kickoff_time': fix.get('kickoff_time', ''),
-                        'status': status,
-                    })
+                home_team = team_full.get(fix['team_h'], {})
+                away_team = team_full.get(fix['team_a'], {})
                 
-                # Sort: LIVE first, then upcoming (by kickoff), then FT
-                status_order = {'LIVE': 0, 'upcoming': 1, 'FT': 2}
-                gameweek_fixtures.sort(key=lambda x: (status_order.get(x['status'], 1), x['kickoff_time']))
+                home_name = home_team.get('name', '?')
+                away_name = away_team.get('name', '?')
+                
+                home_logo = f"https://resources.premierleague.com/premierleague/badges/t{home_team.get('code', '')}.png"
+                away_logo = f"https://resources.premierleague.com/premierleague/badges/t{away_team.get('code', '')}.png"
+                
+                # Determine match status
+                started = fix.get('started', False)
+                finished = fix.get('finished', False) or fix.get('finished_provisional', False)
+                
+                if finished:
+                    status = 'FT'
+                elif started:
+                    status = 'LIVE'
+                else:
+                    status = 'upcoming'
+                
+                gameweek_fixtures.append({
+                    'event': fix.get('event'),
+                    'home_team': home_name,
+                    'away_team': away_name,
+                    'home_logo': home_logo,
+                    'away_logo': away_logo,
+                    'home_score': fix.get('team_h_score'),
+                    'away_score': fix.get('team_a_score'),
+                    'kickoff_time': fix.get('kickoff_time', ''),
+                    'status': status,
+                })
+            
+            # Note: No need to sort here, frontend will filter by event and sort
         
         job.gameweek_fixtures = gameweek_fixtures
         
@@ -294,6 +291,7 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
         base_summary = generate_ai_summary(t_cards, job.budget, job.global_injuries, starters + bench, transfers)
         job.ai_summary = gw_warning + base_summary
         job.news = generate_fpl_news(fpl_data)
+        job.team_stats = [{"current_event": current_event['id'] if current_event else 1, "next_event": next_event['id'] if next_event else 1}]
         
         age = time.time() - fpl_cache["timestamp"]
         job.data_freshness = {

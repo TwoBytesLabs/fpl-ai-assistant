@@ -104,14 +104,20 @@ function PlayerRadarChart({ player, transfers }) {
   const priceScore = ((player.price || 5.0) / 15.0) * 100; // Normalize price (e.g. Haaland 15.0m = 100)
   
   // Real stats normalized to 0-100 based on typical FPL maximums
-  const realXG = Math.min(100, ((player.stat_xg || 0) / 0.9) * 100);
-  const realXA = Math.min(100, ((player.stat_xa || 0) / 0.5) * 100);
-  const realXGI = Math.min(100, ((player.stat_xgi || 0) / 1.3) * 100);
-  const realForm = Math.min(100, ((player.stat_form || 0) / 8.0) * 100);
-  const realThreat = Math.min(100, ((player.stat_threat || 0) / 1500.0) * 100);
+  const stat_xg = parseFloat(player.expected_goals || 0);
+  const stat_xa = parseFloat(player.expected_assists || 0);
+  const stat_xgi = parseFloat(player.expected_goal_involvements || 0);
+  const stat_form = parseFloat(player.form || 0);
+  const stat_threat = parseFloat(player.threat || 0);
+
+  const realXG = Math.min(100, (stat_xg / 20.0) * 100);
+  const realXA = Math.min(100, (stat_xa / 12.0) * 100);
+  const realXGI = Math.min(100, (stat_xgi / 30.0) * 100);
+  const realForm = Math.min(100, (stat_form / 8.0) * 100);
+  const realThreat = Math.min(100, (stat_threat / 1500.0) * 100);
 
   // If real stats are tiny/zero (e.g., pre-season), fallback to their price/ep_next heuristics so the chart is huge for premiums!
-  const hasRealData = (player.stat_xg > 0.1 || player.stat_form > 0.5 || player.stat_threat > 100);
+  const hasRealData = (stat_xg > 0.1 || stat_form > 0.5 || stat_threat > 100);
   const pId = player.id || 1;
   const baseVal = parseFloat(player.ep_next) || 3.0;
 
@@ -465,7 +471,7 @@ function MinimalLanding({ image, setImage, transfers, setTransfers, fileInputRef
       </div>
       <div className="football-scene">
         <div 
-          className="pitch-container" 
+          className="pitch-container hero-pitch" 
           style={{ cursor: 'pointer' }}
           onClick={() => fileInputRef.current && fileInputRef.current.click()}
           onDrop={(e) => { e.preventDefault(); e.stopPropagation(); handleDrop(e); }}
@@ -481,13 +487,26 @@ function MinimalLanding({ image, setImage, transfers, setTransfers, fileInputRef
             <span>Made by Hriday Patel</span>
           </div>
           <div className="pitch-drop-text">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '1rem', color: 'rgba(0, 255, 135, 0.8)' }}>
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <p style={{ fontSize: '1.2rem', color: '#fff', marginBottom: '0.5rem', fontWeight: 600 }}>Drag & drop your pitch screenshot</p>
-            <span style={{ fontSize: '0.9rem', color: '#a3a3a3' }}>or click to browse</span>
+            {image ? (
+              <>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '1rem' }}>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <p style={{ fontSize: '1.2rem', color: '#10b981', marginBottom: '0.5rem', fontWeight: 600 }}>Screenshot Loaded</p>
+                <span style={{ fontSize: '0.9rem', color: '#a3a3a3' }}>{image.name}</span>
+              </>
+            ) : (
+              <>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '1rem', color: 'rgba(0, 255, 135, 0.8)' }}>
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <p style={{ fontSize: '1.2rem', color: '#fff', marginBottom: '0.5rem', fontWeight: 600 }}>Drag & drop your pitch screenshot</p>
+                <span style={{ fontSize: '0.9rem', color: '#a3a3a3' }}>or click to browse</span>
+              </>
+            )}
           </div>
           <svg viewBox="0 0 800 500" className="blueprint-svg" preserveAspectRatio="none">
             <rect x="0" y="0" width="800" height="500" />
@@ -505,7 +524,23 @@ function MinimalLanding({ image, setImage, transfers, setTransfers, fileInputRef
 
         </div>
       </div>
-        {image && (
+        <div className="action-area-wrapper">
+          {/* Sketch sequence for the button area */}
+          <svg className="action-sketch" viewBox="0 0 450 70" preserveAspectRatio="none">
+            {/* Outer Box */}
+            <rect x="2" y="2" width="446" height="66" rx="12" />
+            
+            {/* Free Transfers Section Blueprint */}
+            <text x="25" y="40" fontSize="14" fontFamily="sans-serif" strokeWidth="0.8" fill="none">Free Transfers</text>
+            <rect x="135" y="15" width="70" height="40" rx="6" />
+            <path d="M 185 32 L 192 39 L 199 32" strokeWidth="1.5" strokeLinejoin="round" fill="none" />
+            
+            {/* Run Analysis Button Blueprint */}
+            <rect x="230" y="15" width="200" height="40" rx="6" />
+            <text x="245" y="40" fontSize="15" fontFamily="sans-serif" strokeWidth="0.8" fill="none">{image ? "Run Analysis" : "Waiting for Screenshot..."}</text>
+          </svg>
+
+          {/* Actual Solidified UI */}
           <div className="minimal-actions">
             <div className="minimal-select-wrapper">
               <label>Free Transfers</label>
@@ -518,10 +553,19 @@ function MinimalLanding({ image, setImage, transfers, setTransfers, fileInputRef
                 <option value={99}>Unlimited</option>
               </select>
             </div>
-            <button className="minimal-btn" onClick={processImage}>Run Analysis</button>
-            <button className="minimal-btn-outline" onClick={(e) => {e.stopPropagation(); setImage(null)}}>Clear</button>
+            <button 
+              className="minimal-btn" 
+              onClick={processImage}
+              disabled={!image}
+              style={{ opacity: image ? 1 : 0.5, cursor: image ? 'pointer' : 'not-allowed' }}
+            >
+              {image ? "Run Analysis" : "Waiting for Screenshot..."}
+            </button>
+            {image && (
+              <button className="minimal-btn-outline" onClick={(e) => {e.stopPropagation(); setImage(null)}}>Clear</button>
+            )}
           </div>
-        )}
+        </div>
         {error && <div className="minimal-error">{error}</div>}
       </div>
   );
@@ -534,8 +578,27 @@ function App() {
   const [jobData, setJobData] = useState(null)
   const [metadata, setMetadata] = useState(null)
   const [error, setError] = useState(null)
+  const [activeGw, setActiveGw] = useState(1)
+  const [trueCurrentGw, setTrueCurrentGw] = useState(1)
   const [selectedPlayer, setSelectedPlayer] = useState(null)
   const fileInputRef = useRef(null)
+
+  useEffect(() => {
+    if (jobData?.status === 'complete' && jobData?.gameweek_fixtures) {
+      if (jobData.team_stats && jobData.team_stats.length > 0) {
+        let curr = jobData.team_stats[0].current_event;
+        setTrueCurrentGw(curr);
+        const currFixtures = jobData.gameweek_fixtures.filter(f => f.event === curr);
+        if (currFixtures.length > 0 && currFixtures.every(f => f.status === 'FT')) {
+          setActiveGw(jobData.team_stats[0].next_event || curr + 1);
+        } else {
+          setActiveGw(curr);
+        }
+      } else {
+        setActiveGw(1);
+      }
+    }
+  }, [jobData]);
 
   const getApiBaseUrl = () => {
     return import.meta.env.VITE_API_URL || `http://${window.location.hostname}:3001`;
@@ -868,9 +931,13 @@ function App() {
               {/* Gameweek Fixtures Board */}
               {jobData.gameweek_fixtures && jobData.gameweek_fixtures.length > 0 && (
                 <div className="panel fixtures-board" style={{ marginTop: '1rem' }}>
-                  <h2 className="panel-header">Gameweek Fixtures</h2>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                    <button onClick={() => setActiveGw(Math.max(Math.max(1, trueCurrentGw - 2), activeGw - 1))} disabled={activeGw <= Math.max(1, trueCurrentGw - 2)} className="minimal-btn-outline" style={{ padding: '0.2rem 0.5rem', fontSize: '1.2rem', lineHeight: '1', opacity: activeGw <= Math.max(1, trueCurrentGw - 2) ? 0.3 : 1 }}>&lt;</button>
+                    <h2 className="panel-header" style={{ margin: 0 }}>Gameweek {activeGw} Fixtures</h2>
+                    <button onClick={() => setActiveGw(Math.min(Math.min(38, trueCurrentGw + 3), activeGw + 1))} disabled={activeGw >= Math.min(38, trueCurrentGw + 3)} className="minimal-btn-outline" style={{ padding: '0.2rem 0.5rem', fontSize: '1.2rem', lineHeight: '1', opacity: activeGw >= Math.min(38, trueCurrentGw + 3) ? 0.3 : 1 }}>&gt;</button>
+                  </div>
                   <div className="fixtures-list-col">
-                    {jobData.gameweek_fixtures.map((fix, idx) => (
+                    {jobData.gameweek_fixtures.filter(f => f.event === activeGw).map((fix, idx) => (
                       <div key={idx} className={`fixture-card-row ${fix.status === 'LIVE' ? 'live' : fix.status === 'FT' ? 'finished' : ''}`}>
                         <div className="fixture-teams-row">
                           <div className="fixture-team-wrapper home">
