@@ -17,7 +17,7 @@ import uvicorn
 import requests
 from models import ProcessResponse, PrivacyStatus
 from services.ocr import ocr_service
-from services.analytics import get_best_transfers, format_player, calculate_budget_metrics, get_global_injuries, generate_ai_summary, generate_fpl_news
+from services.analytics import get_best_transfers, format_player, calculate_budget_metrics, get_global_injuries, generate_ai_summary, run_live_research, generate_fpl_news
 from services.ml_engine import ml_engine
 from job_manager import job_manager
 
@@ -288,7 +288,8 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
         if current_event and next_event:
             gw_warning = f"⚠️ **Gameweek Locked:** {current_event['name']} is currently ongoing. Your transfers and the following recommendations are tailored for the upcoming {next_event['name']}.\n\n"
             
-        base_summary = generate_ai_summary(t_cards, job.budget, job.global_injuries, starters + bench, transfers)
+        job.live_research = run_live_research(starters + bench)
+        base_summary = generate_ai_summary(t_cards, job.budget, job.global_injuries, starters + bench, transfers, job.live_research)
         job.ai_summary = gw_warning + base_summary
         job.news = generate_fpl_news(fpl_data)
         job.team_stats = [{"current_event": current_event['id'] if current_event else 1, "next_event": next_event['id'] if next_event else 1}]

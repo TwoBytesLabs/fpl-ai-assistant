@@ -81,6 +81,7 @@ class ProcessResponse(BaseModel):
     global_injuries: Optional[List[InjuryAlert]] = None
     data_freshness: Optional[DataFreshness] = None
     ai_summary: Optional[str] = None
+    live_research: Optional[List[Dict[str, Any]]] = None
     powerups: Optional[List[Dict[str, str]]] = None
     news: Optional[List[Dict[str, str]]] = None
     team_stats: Optional[List[Dict[str, Any]]] = None
