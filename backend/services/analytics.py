@@ -268,7 +268,6 @@ def calculate_budget_metrics(squad: List[Dict], in_the_bank: float) -> BudgetSta
     )
 
 
-
 def run_live_research(squad: List[Dict]) -> List[Dict]:
     research = []
     
@@ -360,6 +359,75 @@ def run_live_research(squad: List[Dict]) -> List[Dict]:
                 "color": color
             })
     return research
+
+def get_global_injuries(fpl_data: Dict) -> List[InjuryAlert]:
+    alerts = []
+    teams_map = {t['id']: t['short_name'] for t in fpl_data.get('teams', [])}
+    
+    for p in fpl_data.get('elements', []):
+        fpl_status = p.get('status', 'a')
+        chance = p.get('chance_of_playing_next_round')
+        
+        if fpl_status != 'a': # 'a' is available
+            news = p.get('news', '')
+            
+            # Determine color and explicit status
+            if fpl_status == 'i':
+                status = "Injured"
+                color = "red"
+            elif fpl_status == 's':
+                if "red card" in news.lower():
+                    status = "Red Card"
+                    color = "darkred"
+                elif "suspended" in news.lower() or "yellow" in news.lower():
+                    status = "Suspended"
+                    color = "red"
+                else:
+                    status = "Suspended"
+                    color = "red"
+            elif fpl_status == 'd':
+                status = "Doubtful"
+                color = "yellow"
+            elif fpl_status == 'u':
+                status = "Loaned / Unavailable"
+                color = "gray"
+            elif fpl_status == 'n':
+                status = "Unavailable"
+                color = "gray"
+            else:
+                status = "Unknown"
+                color = "yellow"
+                
+            if chance is not None and chance > 0 and chance < 100:
+                status = f"Doubtful ({chance}%)"
+                color = "yellow"
+            
+            # Extract return date from news
+            return_date = ""
+            if "Expected back" in news:
+                return_date = news.split("Expected back")[-1].strip()
+            elif "Unknown return date" in news:
+                return_date = "Unknown"
+                
+            team_name = teams_map.get(p.get('team'), 'UNK')
+            
+            player_code = p.get('code', '')
+            photo_url = f"https://resources.premierleague.com/premierleague/photos/players/110x140/p{player_code}.png"
+            
+            alerts.append(InjuryAlert(
+                player_name=p.get('web_name', ''),
+                team_name=team_name,
+                status=status,
+                color=color,
+                chance_of_playing=chance if chance is not None else 0,
+                news=news,
+                return_date=return_date,
+                photo_url=photo_url
+            ))
+            
+    # Sort by severity (0% first)
+    alerts.sort(key=lambda x: x.chance_of_playing)
+    return alerts
 
 def generate_ai_summary(transfers: List[TransferCard], budget: BudgetStatus, injuries: List[InjuryAlert], squad: List[Dict], free_transfers: int = 1, live_research: List[Dict] = None) -> str:
     # A deterministic text engine that feels like AI
