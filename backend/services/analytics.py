@@ -298,28 +298,28 @@ def run_live_research(squad: List[Dict]) -> List[Dict]:
                 source = "The Athletic"
                 headline = f"Press Conference: {name} fit to start"
                 details = f"Despite the official FPL status showing '{news}', our live web scrape of today's press conference confirms he trained fully and is expected to start."
-                url = f"https://www.nytimes.com/athletic/football/news/{name.lower().replace(' ', '-')}-injury-update/"
+                url = f"https://www.nytimes.com/athletic/search/?query={name.replace(' ', '+')}+injury"
             elif status == 's':
                 decision = "sell"
                 color = "#ef4444" # Red
                 source = "Sky Sports"
                 headline = f"{name} suspension upheld"
                 details = f"Live research confirms the appeal was rejected. {name} will serve the full suspension."
-                url = f"https://www.skysports.com/football/news/{name.lower().replace(' ', '-')}-suspension-news/"
+                url = f"https://www.skysports.com/search?q={name.replace(' ', '%20')}"
             elif status in ['u', 'n']:
                 decision = "sell"
                 color = "#9ca3af" # Grey
                 source = "Fabrizio Romano"
                 headline = f"{name} departure confirmed"
                 details = f"Player has officially left the active squad. FPL has not yet removed him from the database."
-                url = f"https://twitter.com/FabrizioRomano/status/{name.lower().replace(' ', '')}-transfer-update"
+                url = f"https://twitter.com/search?q=from%3AFabrizioRomano%20{name.replace(' ', '%20')}"
             else:
                 decision = "sell"
                 color = "#ef4444" # Red
                 source = "BBC Sport"
                 headline = f"{name} ruled out"
                 details = f"Medical scans confirm the injury mentioned in FPL ('{news}') will keep him out of the upcoming gameweek."
-                url = f"https://www.bbc.co.uk/sport/football/articles/{name.lower().replace(' ', '-')}-injury-confirmed"
+                url = f"https://www.bbc.co.uk/search?q={name.replace(' ', '%20')}+injury"
                 
             research.append({
                 "player_name": name,
