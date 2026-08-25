@@ -1,3 +1,4 @@
+from duckduckgo_search import DDGS
 from typing import List, Dict, Tuple, Any
 from models import TransferCard, PlayerSchema, BudgetStatus, InjuryAlert
 
@@ -267,59 +268,85 @@ def calculate_budget_metrics(squad: List[Dict], in_the_bank: float) -> BudgetSta
     )
 
 
+
 def run_live_research(squad: List[Dict]) -> List[Dict]:
     research = []
+    
     for p in squad:
         status = p.get('status', 'a')
         yellows = p.get('yellow_cards', 0)
+        
         if status != 'a' or yellows == 4:
             news = p.get('news', '')
             name = p.get('web_name', 'Player')
             chance = p.get('chance_of_playing_next_round')
             
+            # Default fallback mock values
             decision = "keep"
-            headline = ""
-            details = ""
-            source = ""
-            url = ""
-            
-            color = "#10b981" # Default green
+            color = "#10b981" 
+            headline = f"{name} update"
+            details = "We couldn't fetch live data, but FPL shows an active flag."
+            url = f"https://www.google.com/search?q={name.replace(' ', '+')}+injury+premier+league"
+            source = "Google Search"
             
             if yellows == 4 and status == 'a':
                 decision = "keep"
-                color = "#eab308" # Yellow
+                color = "#eab308"
                 source = "FPL Stats"
                 headline = f"Yellow Card Warning: {name}"
-                details = f"{name} is currently on 4 yellow cards. If he receives one more, he will face a 1-match suspension. We are keeping him because his underlying stats (xG/xA) remain incredibly strong, but monitor his discipline."
+                details = f"{name} is currently on 4 yellow cards. If he receives one more, he will face a 1-match suspension. We are keeping him because his underlying stats remain strong."
                 url = "https://fantasy.premierleague.com/statistics"
-            elif status == 'd' or (chance is not None and chance > 0 and chance < 100):
-                decision = "keep"
-                color = "#eab308" # Yellow
-                source = "The Athletic"
-                headline = f"Press Conference: {name} fit to start"
-                details = f"Despite the official FPL status showing '{news}', our live web scrape of today's press conference confirms he trained fully and is expected to start."
-                url = f"https://www.nytimes.com/athletic/search/?query={name.replace(' ', '+')}+injury"
-            elif status == 's':
-                decision = "sell"
-                color = "#ef4444" # Red
-                source = "Sky Sports"
-                headline = f"{name} suspension upheld"
-                details = f"Live research confirms the appeal was rejected. {name} will serve the full suspension."
-                url = f"https://www.skysports.com/search?q={name.replace(' ', '%20')}"
-            elif status in ['u', 'n']:
-                decision = "sell"
-                color = "#9ca3af" # Grey
-                source = "Fabrizio Romano"
-                headline = f"{name} departure confirmed"
-                details = f"Player has officially left the active squad. FPL has not yet removed him from the database."
-                url = f"https://twitter.com/search?q=from%3AFabrizioRomano%20{name.replace(' ', '%20')}"
             else:
-                decision = "sell"
-                color = "#ef4444" # Red
-                source = "BBC Sport"
-                headline = f"{name} ruled out"
-                details = f"Medical scans confirm the injury mentioned in FPL ('{news}') will keep him out of the upcoming gameweek."
-                url = f"https://www.bbc.co.uk/search?q={name.replace(' ', '%20')}+injury"
+                # ── ACTUALLY SCRAPE THE WEB IN REAL TIME ──
+                try:
+                    search_query = f"{name} injury update news premier league"
+                    if status == 's':
+                        search_query = f"{name} suspension news premier league"
+                    elif status in ['u', 'n']:
+                        search_query = f"{name} transfer news loan"
+                        
+                    results = DDGS().text(search_query, max_results=1)
+                    if results:
+                        res = results[0]
+                        headline = res.get('title', headline)
+                        details = res.get('body', details)
+                        url = res.get('href', url)
+                        try:
+                            source = url.split('/')[2].replace('www.', '')
+                        except:
+                            source = "Web Search"
+                        
+                        # AI Decision Engine: Naive Sentiment Analysis
+                        combined_text = (headline + " " + details).lower()
+                        negative_words = ['ruled out', 'miss', 'surgery', 'out for', 'blow', 'doubt', 'suspended', 'rehab', 'sidelined', 'leave', 'left', 'loaned']
+                        positive_words = ['fit', 'return', 'boost', 'back in training', 'available', 'starts', 'cleared']
+                        
+                        is_negative = any(word in combined_text for word in negative_words)
+                        is_positive = any(word in combined_text for word in positive_words)
+                        
+                        if status == 's' or status in ['u', 'n']:
+                            decision = "sell"
+                            color = "#ef4444"
+                        elif is_negative and not is_positive:
+                            decision = "sell"
+                            color = "#ef4444"
+                        elif is_positive:
+                            decision = "keep"
+                            color = "#10b981"
+                        else:
+                            # Fallback to FPL logic if web search is ambiguous
+                            if chance and int(chance) <= 50:
+                                decision = "sell"
+                                color = "#ef4444"
+                            else:
+                                decision = "keep"
+                                color = "#eab308"
+                except Exception as e:
+                    print(f"Web Search Failed for {name}: {e}")
+                    # If scraping fails, use strict fallback colors based on FPL severity
+                    if status == 'd': color = "#eab308"
+                    elif status in ['s', 'i']: color = "#ef4444"
+                    elif status in ['u', 'n']: color = "#9ca3af"
                 
             research.append({
                 "player_name": name,
@@ -333,75 +360,6 @@ def run_live_research(squad: List[Dict]) -> List[Dict]:
                 "color": color
             })
     return research
-
-def get_global_injuries(fpl_data: Dict) -> List[InjuryAlert]:
-    alerts = []
-    teams_map = {t['id']: t['short_name'] for t in fpl_data.get('teams', [])}
-    
-    for p in fpl_data.get('elements', []):
-        fpl_status = p.get('status', 'a')
-        chance = p.get('chance_of_playing_next_round')
-        
-        if fpl_status != 'a': # 'a' is available
-            news = p.get('news', '')
-            
-            # Determine color and explicit status
-            if fpl_status == 'i':
-                status = "Injured"
-                color = "red"
-            elif fpl_status == 's':
-                if "red card" in news.lower():
-                    status = "Red Card"
-                    color = "darkred"
-                elif "suspended" in news.lower() or "yellow" in news.lower():
-                    status = "Suspended"
-                    color = "red"
-                else:
-                    status = "Suspended"
-                    color = "red"
-            elif fpl_status == 'd':
-                status = "Doubtful"
-                color = "yellow"
-            elif fpl_status == 'u':
-                status = "Loaned / Unavailable"
-                color = "gray"
-            elif fpl_status == 'n':
-                status = "Unavailable"
-                color = "gray"
-            else:
-                status = "Unknown"
-                color = "yellow"
-                
-            if chance is not None and chance > 0 and chance < 100:
-                status = f"Doubtful ({chance}%)"
-                color = "yellow"
-            
-            # Extract return date from news
-            return_date = ""
-            if "Expected back" in news:
-                return_date = news.split("Expected back")[-1].strip()
-            elif "Unknown return date" in news:
-                return_date = "Unknown"
-                
-            team_name = teams_map.get(p.get('team'), 'UNK')
-            
-            player_code = p.get('code', '')
-            photo_url = f"https://resources.premierleague.com/premierleague/photos/players/110x140/p{player_code}.png"
-            
-            alerts.append(InjuryAlert(
-                player_name=p.get('web_name', ''),
-                team_name=team_name,
-                status=status,
-                color=color,
-                chance_of_playing=chance if chance is not None else 0,
-                news=news,
-                return_date=return_date,
-                photo_url=photo_url
-            ))
-            
-    # Sort by severity (0% first)
-    alerts.sort(key=lambda x: x.chance_of_playing)
-    return alerts
 
 def generate_ai_summary(transfers: List[TransferCard], budget: BudgetStatus, injuries: List[InjuryAlert], squad: List[Dict], free_transfers: int = 1, live_research: List[Dict] = None) -> str:
     # A deterministic text engine that feels like AI
