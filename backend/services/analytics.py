@@ -1,8 +1,17 @@
 from typing import List, Dict, Tuple, Any
 from models import TransferCard, PlayerSchema, BudgetStatus, InjuryAlert
 
-def score_player(player: Dict, strategy: str = "next_gameweek") -> float:
+def score_player(player: Dict, strategy: str = "next_gameweek", research_map: dict = None) -> float:
     """Calculates a heuristic score for a player based on multiple weighted factors."""
+    
+    # ── LIVE RESEARCH OVERRIDE ──
+    if research_map and player.get('web_name') in research_map:
+        decision = research_map[player.get('web_name')]
+        if decision == 'keep':
+            return 999.0  # Artificially boost to guarantee we keep them
+        elif decision == 'sell':
+            return -999.0 # Artificially tank to guarantee we sell them
+            
     ep_next = float(player.get('ep_next', 0) or 0)
     now_cost = player.get('now_cost', 50)
     
@@ -24,16 +33,16 @@ def score_player(player: Dict, strategy: str = "next_gameweek") -> float:
         
     return score
 
-def get_optimal_11(squad: List[Dict], strategy: str) -> Tuple[List[Dict], List[Dict]]:
+def get_optimal_11(squad: List[Dict], strategy: str, research_map: dict = None) -> Tuple[List[Dict], List[Dict]]:
     gks = [p for p in squad if p['element_type'] == 1]
     defs = [p for p in squad if p['element_type'] == 2]
     mids = [p for p in squad if p['element_type'] == 3]
     fwds = [p for p in squad if p['element_type'] == 4]
     
-    gks.sort(key=lambda x: score_player(x, strategy), reverse=True)
-    defs.sort(key=lambda x: score_player(x, strategy), reverse=True)
-    mids.sort(key=lambda x: score_player(x, strategy), reverse=True)
-    fwds.sort(key=lambda x: score_player(x, strategy), reverse=True)
+    gks.sort(key=lambda x: score_player(x, strategy, research_map), reverse=True)
+    defs.sort(key=lambda x: score_player(x, strategy, research_map), reverse=True)
+    mids.sort(key=lambda x: score_player(x, strategy, research_map), reverse=True)
+    fwds.sort(key=lambda x: score_player(x, strategy, research_map), reverse=True)
     
     starters = []
     # Mandatory minimums
@@ -80,9 +89,11 @@ def get_best_transfers(
     used_ids: set, 
     free_transfers: int, 
     strategy: str,
-    bank_balance: float
+    bank_balance: float,
+    live_research: List[Dict] = None
 ) -> Tuple[List[Dict], List[Dict], List[TransferCard]]:
     
+    research_map = {r['player_name']: r['decision'] for r in (live_research or [])}
     squad = starters + bench
     for p in squad:
         p['is_new'] = False
@@ -94,8 +105,8 @@ def get_best_transfers(
         return starters, bench, []
         
     current_squad = squad.copy()
-    current_starters, current_bench = get_optimal_11(current_squad, strategy)
-    current_score = sum(score_player(p, strategy) for p in current_starters)
+    current_starters, current_bench = get_optimal_11(current_squad, strategy, research_map)
+    current_score = sum(score_player(p, strategy, research_map) for p in current_starters)
     
     best_starters = current_starters
     best_bench = current_bench
@@ -131,7 +142,7 @@ def get_best_transfers(
                 if in_p['id'] not in used_ids and in_p['element_type'] == out_pos:
                     if in_p.get('now_cost', 50) <= max_price:
                         # Quick filter: only skip if we aren't forcing a transfer
-                        if (iter_idx > 0 or free_transfers == 0) and score_player(in_p, strategy) <= score_player(out_p, strategy):
+                        if (iter_idx > 0 or free_transfers == 0) and score_player(in_p, strategy, research_map) <= score_player(out_p, strategy, research_map):
                             continue
                             
                         hypo_squad = [p for p in current_squad if p['id'] != out_p['id']]
@@ -139,8 +150,8 @@ def get_best_transfers(
                         hypo_in['is_new'] = True
                         hypo_squad.append(hypo_in)
                         
-                        new_starters, new_bench = get_optimal_11(hypo_squad, strategy)
-                        new_score = sum(score_player(p, strategy) for p in new_starters)
+                        new_starters, new_bench = get_optimal_11(hypo_squad, strategy, research_map)
+                        new_score = sum(score_player(p, strategy, research_map) for p in new_starters)
                         
                         # Tie breaker: if scores are equal, prefer the one with better value
                         is_better_score = new_score > best_score
