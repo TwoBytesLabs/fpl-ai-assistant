@@ -114,6 +114,18 @@ def get_best_transfers(
     current_bank = bank_balance
     transfers = []
     
+    # --- BRUTE FORCE OPTIMIZATION ---
+    # Pre-filter all_players to the top 25 per position by heuristic score
+    # to eliminate exhaustive brute-force search over 600+ players
+    filtered_players = []
+    for pos_id in [1, 2, 3, 4]:
+        pos_players = [p for p in all_players if p['element_type'] == pos_id]
+        pos_players.sort(key=lambda x: score_player(x, strategy, research_map), reverse=True)
+        filtered_players.extend(pos_players[:25])
+        
+    all_players = filtered_players
+    # --------------------------------
+    
     # Run the greedy transfer algorithm
     max_transfers = max(1, free_transfers)
     
@@ -222,7 +234,7 @@ def format_player(p: Dict, teams_map: Dict = None, teams_map_code: Dict = None, 
     # This prevents blank images for players who don't have headshots
     team_code = teams_map_code.get(team_id, 3) if teams_map_code else 3
     is_gk = p.get('element_type') == 1
-    shirt_postfix = f"_{team_code}_1-66.png" if is_gk else f"_{team_code}-66.png"
+    shirt_postfix = f"_{team_code}_1-66.webp" if is_gk else f"_{team_code}-66.webp"
     photo_url = f"https://fantasy.premierleague.com/dist/img/shirts/standard/shirt{shirt_postfix}"
     
     # Look up real team short name (e.g. "ARS", "MUN") from the teams map
@@ -269,9 +281,10 @@ def calculate_budget_metrics(squad: List[Dict], in_the_bank: float) -> BudgetSta
 
 
 def run_live_research(squad: List[Dict]) -> List[Dict]:
+    import concurrent.futures
     research = []
     
-    for p in squad:
+    def fetch_player_news(p):
         status = p.get('status', 'a')
         yellows = p.get('yellow_cards', 0)
         
@@ -347,7 +360,7 @@ def run_live_research(squad: List[Dict]) -> List[Dict]:
                     elif status in ['s', 'i']: color = "#ef4444"
                     elif status in ['u', 'n']: color = "#9ca3af"
                 
-            research.append({
+            return {
                 "player_name": name,
                 "fpl_status": news or "Flagged",
                 "fpl_chance": f"{chance}%" if chance else "Unknown",
@@ -357,7 +370,21 @@ def run_live_research(squad: List[Dict]) -> List[Dict]:
                 "details": details,
                 "url": url,
                 "color": color
-            })
+            }
+        return None
+
+    executor = concurrent.futures.ThreadPoolExecutor(max_workers=10)
+    future_to_p = {executor.submit(fetch_player_news, p): p for p in squad}
+    try:
+        for future in concurrent.futures.as_completed(future_to_p, timeout=5):
+            res = future.result()
+            if res:
+                research.append(res)
+    except concurrent.futures.TimeoutError:
+        pass
+    finally:
+        executor.shutdown(wait=False, cancel_futures=True)
+        
     return research
 
 def get_global_injuries(fpl_data: Dict) -> List[InjuryAlert]:

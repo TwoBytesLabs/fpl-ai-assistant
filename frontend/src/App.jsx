@@ -601,7 +601,7 @@ function App() {
   }, [jobData]);
 
   const getApiBaseUrl = () => {
-    return import.meta.env.VITE_API_URL || `http://${window.location.hostname}:3001`;
+    return import.meta.env.VITE_API_URL || `http://127.0.0.1:3001`;
   }
 
   useEffect(() => {

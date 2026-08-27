@@ -20,6 +20,7 @@ from services.ocr import ocr_service
 from services.analytics import get_best_transfers, format_player, calculate_budget_metrics, get_global_injuries, generate_ai_summary, run_live_research, generate_fpl_news
 from services.ml_engine import ml_engine
 from job_manager import job_manager
+from logger import logger
 
 app = FastAPI()
 
@@ -49,6 +50,7 @@ import urllib.request
 def get_fpl_data():
     global fpl_cache
     if time.time() - fpl_cache["timestamp"] > 3600: # 1 hour cache
+        logger.info("FPL cache miss or stale. Fetching fresh data from FPL API...")
         try:
             req_data = urllib.request.Request(
                 'https://fantasy.premierleague.com/api/bootstrap-static/', 
@@ -72,8 +74,9 @@ def get_fpl_data():
                     fpl_cache["fixtures"] = []
                 
             fpl_cache["timestamp"] = time.time()
+            logger.info("FPL data successfully fetched and cached.")
         except Exception as e:
-            print("ERROR FETCHING LIVE FPL DATA:", str(e))
+            logger.error(f"ERROR FETCHING LIVE FPL DATA: {e}")
             if not fpl_cache["data"]:
                 try:
                     with open('fpl_data_cache.json', 'r') as f:
@@ -83,6 +86,8 @@ def get_fpl_data():
                     fpl_cache["timestamp"] = time.time()
                 except Exception:
                     raise Exception("EXTERNAL_DATA_UNAVAILABLE")
+    else:
+        logger.info("FPL cache hit. Using cached data.")
     return fpl_cache["data"], fpl_cache.get("fixtures", [])
 
 def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: str, bank_balance: float):
@@ -134,7 +139,7 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
                 if player_id in ml_predictions:
                     p['ep_next'] = str(ml_predictions[player_id])
         except Exception as e:
-            print(f"ML Engine warning: {e}")
+            logger.warning(f"ML Engine warning: {e}")
         
         analysis_start = time.time()
         
@@ -326,8 +331,9 @@ def process_job(request_id: str, image_bytes: bytes, transfers: int, strategy: s
     finally:
         # Guarantee cleanup of memory
         del image_bytes
-        if 'img' in locals() and img is not None:
-            del img
+        import gc
+        gc.collect()
+        logger.info(f"Job {request_id} memory cleanup complete.")
 
 @app.post("/api/process-team", response_model=ProcessResponse)
 async def upload_team(background_tasks: BackgroundTasks, squadImage: UploadFile = File(...), transfers: int = Form(1), strategy: str = Form("next_gameweek"), bank_balance: float = Form(0.0)):
