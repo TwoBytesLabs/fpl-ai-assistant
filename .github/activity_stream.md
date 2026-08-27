@@ -641,3 +641,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-26 13:37:21 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-08-26 13:56:35 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-08-27 09:35:39 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
+* `2026-08-27 21:57:43 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
