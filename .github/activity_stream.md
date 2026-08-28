@@ -643,3 +643,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-27 09:35:39 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-08-27 21:57:43 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-08-28 18:19:41 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-08-28 21:31:41 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
