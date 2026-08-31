@@ -652,3 +652,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-30 22:24:16 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-08-30 22:30:15 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-08-31 11:57:36 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-08-31 13:54:03 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
