@@ -655,3 +655,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-08-31 13:54:03 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-08-31 21:49:07 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-09-01 18:18:40 +0530` - docs: update FPL player projection pipeline specification
+* `2026-09-01 21:02:12 +0530` - chore(deps): update data science, pandas, and scipy dependencies
