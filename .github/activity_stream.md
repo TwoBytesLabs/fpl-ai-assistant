@@ -659,3 +659,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-02 10:39:17 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-09-02 13:30:58 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-09-02 14:19:15 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2026-09-02 17:27:10 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
