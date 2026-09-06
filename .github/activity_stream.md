@@ -663,3 +663,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-03 17:37:21 +0530` - fix(data): sanitize historical price fluctuation and transfer records
 * `2026-09-04 21:04:06 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-09-05 12:33:57 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2026-09-06 15:38:35 +0530` - feat(ui): refine captaincy pick confidence indicator component
