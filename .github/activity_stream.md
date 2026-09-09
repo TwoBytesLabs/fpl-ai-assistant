@@ -668,3 +668,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-06 21:25:26 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-09-08 09:06:34 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-09-08 17:08:28 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-09-09 09:09:17 +0530` - refactor(config): centralize fixture difficulty heuristic weights
