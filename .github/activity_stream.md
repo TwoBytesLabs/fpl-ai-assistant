@@ -672,3 +672,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-09 21:10:39 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-09-10 18:11:28 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-09-10 19:50:07 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-09-10 21:33:09 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
