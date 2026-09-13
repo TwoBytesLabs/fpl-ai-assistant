@@ -676,3 +676,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-12 13:54:08 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-09-12 22:22:13 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-09-13 09:03:29 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-09-13 10:45:18 +0530` - chore(deps): update data science, pandas, and scipy dependencies
