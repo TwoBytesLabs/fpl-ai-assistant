@@ -675,3 +675,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-10 21:33:09 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-09-12 13:54:08 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-09-12 22:22:13 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-09-13 09:03:29 +0530` - refactor(config): centralize fixture difficulty heuristic weights
