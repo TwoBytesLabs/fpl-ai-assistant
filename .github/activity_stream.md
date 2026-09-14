@@ -678,3 +678,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-13 09:03:29 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-09-13 10:45:18 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-09-13 17:15:48 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-09-14 13:40:02 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
