@@ -681,3 +681,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-14 13:40:02 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-09-14 19:05:02 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-09-14 22:39:52 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
+* `2026-09-15 10:09:25 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
