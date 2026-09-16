@@ -683,3 +683,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-14 22:39:52 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-09-15 10:09:25 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-09-15 16:07:24 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-09-16 17:18:44 +0530` - docs: update FPL player projection pipeline specification
