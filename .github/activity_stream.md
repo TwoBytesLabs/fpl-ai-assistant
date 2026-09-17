@@ -687,3 +687,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-16 17:47:57 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-09-17 09:40:56 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-09-17 17:29:53 +0530` - feat(engine): integrate opponent defensive vulnerability index
+* `2026-09-17 22:06:17 +0530` - feat(ui): refine captaincy pick confidence indicator component
