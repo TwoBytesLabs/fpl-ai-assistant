@@ -691,3 +691,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-18 09:58:24 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-09-18 12:15:22 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-09-18 14:34:23 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
+* `2026-09-19 12:12:54 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
