@@ -695,3 +695,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-20 09:38:48 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-09-20 10:12:48 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-09-20 19:12:03 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-09-20 21:25:18 +0530` - refactor(config): centralize fixture difficulty heuristic weights
