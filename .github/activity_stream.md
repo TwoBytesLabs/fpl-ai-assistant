@@ -699,3 +699,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-21 14:21:32 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-09-22 11:50:45 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-09-22 16:03:09 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2026-09-22 16:50:27 +0530` - docs: update FPL player projection pipeline specification
