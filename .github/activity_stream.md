@@ -709,3 +709,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-25 13:14:23 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-09-25 17:59:38 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-09-26 14:02:05 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2026-09-26 15:16:09 +0530` - refactor(config): centralize fixture difficulty heuristic weights
