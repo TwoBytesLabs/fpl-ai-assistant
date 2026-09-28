@@ -713,3 +713,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-26 19:53:53 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-09-26 22:41:05 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
 * `2026-09-27 19:29:37 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2026-09-28 10:22:39 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
