@@ -719,3 +719,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-28 20:40:26 +0530` - feat(ui): refine captaincy pick confidence indicator component
 * `2026-09-28 22:39:45 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-09-29 12:53:40 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-09-29 15:46:07 +0530` - feat(ui): refine captaincy pick confidence indicator component
