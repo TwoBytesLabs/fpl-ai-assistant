@@ -725,3 +725,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-09-29 22:35:26 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-09-30 22:01:32 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-10-01 09:26:23 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
+* `2026-10-01 12:16:31 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
