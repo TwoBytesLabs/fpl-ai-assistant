@@ -733,3 +733,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-03 14:20:09 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
 * `2026-10-03 14:48:46 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-10-03 17:08:17 +0530` - docs: update FPL player projection pipeline specification
+* `2026-10-03 17:52:02 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
