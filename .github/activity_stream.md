@@ -735,3 +735,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-03 17:08:17 +0530` - docs: update FPL player projection pipeline specification
 * `2026-10-03 17:52:02 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-10-03 18:10:30 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2026-10-04 09:31:10 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
