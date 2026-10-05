@@ -739,3 +739,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-04 11:55:31 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-10-04 22:46:37 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-10-05 10:59:56 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2026-10-05 11:33:50 +0530` - feat(engine): integrate opponent defensive vulnerability index
