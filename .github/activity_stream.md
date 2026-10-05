@@ -741,3 +741,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-05 10:59:56 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-10-05 11:33:50 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-10-05 13:47:50 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
+* `2026-10-05 20:59:17 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
