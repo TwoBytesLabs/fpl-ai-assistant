@@ -29,3 +29,6 @@ jobs_cache/
 *.tmp
 *.temp
 test-out.png
+
+*.log
+backend/logs/

@@ -1,0 +1,8 @@
+{
+  "name": "fpl-assistant",
+  "version": "1.0.0",
+  "description": "FPL AI Assistant v2",
+  "scripts": {
+    "dev": "python3 start_all.py"
+  }
+}

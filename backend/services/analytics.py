@@ -1,4 +1,6 @@
-from duckduckgo_search import DDGS
+from ddgs import DDGS
+from .news_analysis import classify_player_news
+
 from typing import List, Dict, Tuple, Any
 from models import TransferCard, PlayerSchema, BudgetStatus, InjuryAlert
 
@@ -293,90 +295,73 @@ def run_live_research(squad: List[Dict]) -> List[Dict]:
             name = p.get('web_name', 'Player')
             chance = p.get('chance_of_playing_next_round')
             
-            # Default fallback mock values
-            decision = "keep"
-            color = "#10b981" 
-            headline = f"{name} update"
-            details = "We couldn't fetch live data, but FPL shows an active flag."
-            url = f"https://www.google.com/search?q={name.replace(' ', '+')}+injury+premier+league"
-            source = "Google Search"
-            
-            if yellows == 4 and status == 'a':
-                decision = "keep"
-                color = "#eab308"
-                source = "FPL Stats"
-                headline = f"Yellow Card Warning: {name}"
-                details = f"{name} is currently on 4 yellow cards. If he receives one more, he will face a 1-match suspension. We are keeping him because his underlying stats remain strong."
-                url = "https://fantasy.premierleague.com/statistics"
-            else:
-                # ── ACTUALLY SCRAPE THE WEB IN REAL TIME ──
-                try:
-                    search_query = f"{name} injury update news premier league"
-                    if status == 's':
-                        search_query = f"{name} suspension news premier league"
-                    elif status in ['u', 'n']:
-                        search_query = f"{name} transfer news loan"
-                        
-                    results = DDGS().text(search_query, max_results=1)
-                    if results:
-                        res = results[0]
-                        headline = res.get('title', headline)
-                        details = res.get('body', details)
-                        url = res.get('href', url)
-                        try:
-                            source = url.split('/')[2].replace('www.', '')
-                        except:
-                            source = "Web Search"
-                        
-                        # AI Decision Engine: Naive Sentiment Analysis
-                        combined_text = (headline + " " + details).lower()
-                        negative_words = ['ruled out', 'miss', 'surgery', 'out for', 'blow', 'doubt', 'suspended', 'rehab', 'sidelined', 'leave', 'left', 'loaned']
-                        positive_words = ['fit', 'return', 'boost', 'back in training', 'available', 'starts', 'cleared']
-                        
-                        is_negative = any(word in combined_text for word in negative_words)
-                        is_positive = any(word in combined_text for word in positive_words)
-                        
-                        if status == 's' or status in ['u', 'n']:
-                            decision = "sell"
-                            color = "#ef4444"
-                        elif is_negative and not is_positive:
-                            decision = "sell"
-                            color = "#ef4444"
-                        elif is_positive:
-                            decision = "keep"
-                            color = "#10b981"
-                        else:
-                            # Fallback to FPL logic if web search is ambiguous
-                            if chance and int(chance) <= 50:
-                                decision = "sell"
-                                color = "#ef4444"
-                            else:
-                                decision = "keep"
-                                color = "#eab308"
-                except Exception as e:
-                    print(f"Web Search Failed for {name}: {e}")
-                    # If scraping fails, use strict fallback colors based on FPL severity
-                    if status == 'd': color = "#eab308"
-                    elif status in ['s', 'i']: color = "#ef4444"
-                    elif status in ['u', 'n']: color = "#9ca3af"
+            # Use new classify_player_news logic for EVERYTHING
+            search_query = f"{name} FPL injury news"
+            if status == 's':
+                search_query = f"{name} suspension news premier league"
+            elif status in ['u', 'n']:
+                search_query = f"{name} transfer news loan"
+            elif yellows == 4 and status == 'a':
+                search_query = f"{name} yellow cards suspension warning"
                 
+            try:
+                results = []
+                import time
+                for attempt in range(3):
+                    try:
+                        results = list(DDGS().text(search_query, max_results=6))
+                        if results:
+                            break
+                    except Exception as inner_e:
+                        if attempt == 2:
+                            raise inner_e
+                    time.sleep(1)
+                
+                if not results:
+                    raise Exception("No results found.")
+                
+                # classify_player_news handles all deduplication, whitelist sorting, and NLP logic
+                classification = classify_player_news(results, status)
+                
+            except Exception as e:
+                print(f"Web Search Failed for {name}: {e}")
+                # Fallback on failure
+                if status == 's': color, decision = "#ef4444", "sell"
+                elif status in ['u', 'n']: color, decision = "#9ca3af", "sell"
+                elif status == 'd': color, decision = "#eab308", "keep"
+                elif status == 'i': color, decision = "#ef4444", "sell"
+                else: color, decision = "#10b981", "keep"
+                
+                classification = {
+                    "category": "UNKNOWN",
+                    "color": color,
+                    "decision": decision,
+                    "score_delta": 0,
+                    "confidence": "low",
+                    "destination_club": None,
+                    "ban_matches": None,
+                    "source_url": "https://fantasy.premierleague.com/statistics",
+                    "source_name": "FPL Stats",
+                    "summary": "We couldn't fetch live data, but FPL shows an active flag."
+                }
+            
             return {
                 "player_name": name,
                 "fpl_status": news or "Flagged",
                 "fpl_chance": f"{chance}%" if chance else "Unknown",
-                "decision": decision,
-                "source": source,
-                "headline": headline,
-                "details": details,
-                "url": url,
-                "color": color
+                "decision": classification["decision"],
+                "source": classification["source_name"],
+                "headline": f"{classification['category'].replace('_', ' ')}",
+                "details": classification["summary"],
+                "url": classification["source_url"],
+                "color": classification["color"]
             }
         return None
 
-    executor = concurrent.futures.ThreadPoolExecutor(max_workers=10)
+    executor = concurrent.futures.ThreadPoolExecutor(max_workers=2)
     future_to_p = {executor.submit(fetch_player_news, p): p for p in squad}
     try:
-        for future in concurrent.futures.as_completed(future_to_p, timeout=5):
+        for future in concurrent.futures.as_completed(future_to_p, timeout=15):
             res = future.result()
             if res:
                 research.append(res)
