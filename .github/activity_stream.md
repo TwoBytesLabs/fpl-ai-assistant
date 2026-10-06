@@ -743,3 +743,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-05 13:47:50 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-10-05 20:59:17 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
 * `2026-10-05 21:39:50 +0530` - chore(cleanup): remove deprecated legacy simulation scripts
+* `2026-10-06 13:01:05 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
