@@ -748,3 +748,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-07 14:48:08 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-10-07 15:34:30 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-10-07 16:29:26 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2026-10-08 14:29:45 +0530` - chore(deps): update data science, pandas, and scipy dependencies
