@@ -751,3 +751,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-08 14:29:45 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-10-08 17:23:09 +0530` - docs: update FPL player projection pipeline specification
 * `2026-10-08 18:40:59 +0530` - refactor(config): centralize fixture difficulty heuristic weights
+* `2026-10-09 11:19:51 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
