@@ -758,3 +758,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-09 16:55:53 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
 * `2026-10-09 19:01:35 +0530` - fix(scraper): handle rate-limiting edge case in Understat data fetcher
 * `2026-10-10 11:48:16 +0530` - fix(data): sanitize historical price fluctuation and transfer records
+* `2026-10-10 17:29:53 +0530` - docs: update FPL player projection pipeline specification
