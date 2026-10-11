@@ -763,3 +763,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-10 22:52:14 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
 * `2026-10-11 11:56:53 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-10-11 17:43:32 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
+* `2026-10-11 18:03:00 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
