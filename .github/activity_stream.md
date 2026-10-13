@@ -768,3 +768,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-12 09:11:40 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-10-12 17:29:13 +0530` - refactor(api): modularize gameweek fixture difficulty rating calculations
 * `2026-10-12 19:35:47 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
+* `2026-10-13 11:28:37 +0530` - docs: update FPL player projection pipeline specification
