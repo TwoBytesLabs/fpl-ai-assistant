@@ -773,3 +773,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-13 20:07:07 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-10-14 09:48:13 +0530` - chore(deps): update data science, pandas, and scipy dependencies
 * `2026-10-14 12:11:42 +0530` - fix(lineup): resolve vice-captain auto-substitution tiebreaker logic
+* `2026-10-14 12:59:24 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
