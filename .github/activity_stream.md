@@ -777,3 +777,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-14 13:28:51 +0530` - test(unit): add boundary condition tests for bench boost solver
 * `2026-10-14 17:42:27 +0530` - fix(ui): prevent blank screen crash by guarding empty player stats list
 * `2026-10-15 09:11:48 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2026-10-15 10:41:37 +0530` - perf(cache): add Redis TTL caching for gameweek live statistics
