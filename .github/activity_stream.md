@@ -781,3 +781,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-15 10:46:41 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-10-16 13:38:31 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-10-16 14:29:24 +0530` - test(unit): add boundary condition tests for bench boost solver
+* `2026-10-16 16:03:40 +0530` - fix(data): sanitize historical price fluctuation and transfer records
