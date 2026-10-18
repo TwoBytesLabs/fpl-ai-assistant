@@ -787,3 +787,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-17 10:54:04 +0530` - perf(optimizer): vectorize integer linear programming solver constraints
 * `2026-10-17 13:32:26 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
 * `2026-10-17 14:06:21 +0530` - refactor(scraper): add asynchronous retries with exponential backoff
+* `2026-10-18 20:10:37 +0530` - refactor(config): centralize fixture difficulty heuristic weights
