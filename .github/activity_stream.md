@@ -796,3 +796,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-20 21:04:53 +0530` - perf(pandas): replace row iteration with vectorized numpy calculations
 * `2026-10-21 11:07:47 +0530` - feat(engine): integrate opponent defensive vulnerability index
 * `2026-10-21 14:21:14 +0530` - chore(deps): update data science, pandas, and scipy dependencies
+* `2026-10-21 18:51:19 +0530` - feat(export): add CSV and JSON export for optimal gameweek squad
