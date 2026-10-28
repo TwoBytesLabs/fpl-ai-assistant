@@ -815,3 +815,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-27 10:45:12 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-10-27 14:17:13 +0530` - test(integration): verify transfer recommendation solver on GW30 fixtures
 * `2026-10-27 14:26:36 +0530` - docs: update FPL player projection pipeline specification
+* `2026-10-28 13:56:19 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
