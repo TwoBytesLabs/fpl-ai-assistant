@@ -818,3 +818,4 @@ Continuous development log for TwoBytesLabs core components.
 * `2026-10-28 13:56:19 +0530` - docs(hand-off): document model deployment pipeline and scraper cron
 * `2026-10-28 17:11:40 +0530` - refactor(config): centralize fixture difficulty heuristic weights
 * `2026-10-28 18:48:15 +0530` - docs: update FPL player projection pipeline specification
+* `2026-10-29 09:49:03 +0530` - feat(ml): fine-tune player xG and xA prediction heuristics
